@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="
+                0 0 0 0 0.55
+                0 0 0 0 0.78
+                0 0 0 0 0.25
+                0 0 0 1 0" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <linearGradient id="glass-grad" x1="100" y1="20" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="white" stop-opacity="0.9" />
+            <stop offset="1" stop-color="#E0E0E0" stop-opacity="0.6" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Outer Ring -->
+    <circle cx="100" cy="100" r="70" stroke="#8CC63F" stroke-width="4" fill="none" filter="url(#neon-glow)" opacity="0.8"/>
+    <circle cx="100" cy="100" r="60" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+    
+    <!-- Compass Needle -->
+    <path d="M100 30 L120 100 L100 170 L80 100 Z" fill="url(#glass-grad)" stroke="#8CC63F" stroke-width="2" filter="url(#neon-glow)"/>
+    
+    <!-- Center Dot -->
+    <circle cx="100" cy="100" r="8" fill="#8CC63F" filter="url(#neon-glow)"/>
+</svg>

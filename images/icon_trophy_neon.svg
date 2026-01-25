@@ -1,0 +1,36 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feColorMatrix in="blur" type="matrix" values="
+                0 0 0 0 0.55
+                0 0 0 0 0.78
+                0 0 0 0 0.25
+                0 0 0 1 0" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <linearGradient id="glass-grad" x1="100" y1="20" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="white" stop-opacity="0.9" />
+            <stop offset="1" stop-color="#E0E0E0" stop-opacity="0.6" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Trophy Cup -->
+    <path d="M60 40H140V60C140 85 125 105 100 110C75 105 60 85 60 60V40Z" 
+          fill="url(#glass-grad)" stroke="#8CC63F" stroke-width="3" filter="url(#neon-glow)"/>
+    
+    <!-- Handles -->
+    <path d="M60 50H45C35 50 30 65 35 75C40 85 55 85 60 75" 
+          stroke="#8CC63F" stroke-width="3" fill="none" filter="url(#neon-glow)"/>
+    <path d="M140 50H155C165 50 170 65 165 75C160 85 145 85 140 75" 
+          stroke="#8CC63F" stroke-width="3" fill="none" filter="url(#neon-glow)"/>
+          
+    <!-- Base -->
+    <path d="M100 110V140M70 140H130C130 140 120 125 100 125C80 125 70 140 70 140Z" 
+          stroke="#8CC63F" stroke-width="3" fill="none" filter="url(#neon-glow)"/>
+    <rect x="65" y="140" width="70" height="20" rx="4" 
+          fill="url(#glass-grad)" stroke="#8CC63F" stroke-width="3" filter="url(#neon-glow)"/>
+</svg>

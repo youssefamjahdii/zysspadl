@@ -44,56 +44,117 @@
     </header>
 
     <!-- Page Content -->
-    <main style="padding-top: 120px; padding-bottom: 80px;">
-        <section class="section corporate" id="corporate">
-            <div class="container">
-                <div class="section-header reveal-up">
-                    <h2>ZYSS <span class="text-gradient">CORPORATE</span></h2>
-                    <p class="subtitle">Offres Entreprises (Paris & Agadir)</p>
+    <main style="padding-top: 150px; padding-bottom: 80px; overflow-x: hidden;">
+
+        <!-- 1. HERO SECTION (Events Style) -->
+        <section id="corporate-hero"
+            style="min-height: 40vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden;">
+
+            <!-- Floating ZYSS Balls (Logo Edition) -->
+            <div class="hero-balls-container">
+                <!-- Foreground (Big) -->
+                <div class="css-padel-ball ball-1">
+                    <div class="ball-logo"></div>
                 </div>
-                <div class="pricing-grid">
-                    <!-- Discovery -->
-                    <div class="price-card glass-card reveal-up">
-                        <div class="card-header">
-                            <h3>Discovery</h3>
-                            <span class="location">Paris - 3h</span>
+                <div class="css-padel-ball ball-2">
+                    <div class="ball-logo"></div>
+                </div>
+
+                <!-- Midground (Medium) -->
+                <div class="css-padel-ball ball-3">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-4">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-5">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-6">
+                    <div class="ball-logo"></div>
+                </div>
+
+                <!-- Background (Small) -->
+                <div class="css-padel-ball ball-7">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-8">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-9">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-10">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-11">
+                    <div class="ball-logo"></div>
+                </div>
+                <div class="css-padel-ball ball-12">
+                    <div class="ball-logo"></div>
+                </div>
+            </div>
+
+            <div class="section-header reveal-up" style="position: relative; z-index: 2;">
+                <h1 class="large-title"
+                    style="padding-top: 90px; padding-bottom: 20px; min-height: 40vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                    ZYSS <span class="accent">CORPORATE</span></h1>
+                <p class="lead"
+                    style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; line-height: 1.6; color: var(--text-white); opacity: 0.9;">
+                    <span class="text-highlight">Fédérez vos équipes</span> dans un cadre d'exception. <br>
+                    Sport, stratégie et convivialité au service de votre <span
+                        class="text-highlight">performance</span>.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2. MONOLITHS SECTION (Interactive Showroom) -->
+        <section id="monoliths" style="margin-top: 60px;">
+            <div class="container" style="max-width: 1600px; padding: 0 40px;">
+                <div class="monolith-container reveal-up delay-1">
+
+                    <!-- Panel 1: Team Building -->
+                    <div class="monolith-panel glass-card" id="panel-teambuilding">
+                        <div class="panel-overlay-gradient"></div>
+                        <div class="panel-content-wrapper">
+                            <img src="images/icon_lightning_neon.svg" class="neon-icon-img" alt="Lightning">
+                            <h3>Team Building Express</h3>
+                            <div class="panel-details">
+                                <p>Session découverte 2h – 8 à 24 personnes. Initiation rapide et ludique pour renforcer
+                                    la cohésion d'équipe.</p>
+                                <a href="contact.html" class="cta-btn small">Réserver</a>
+                            </div>
                         </div>
-                        <ul class="features">
-                            <li>Initiation Padel</li>
-                            <li>Tournoi Fun</li>
-                            <li>Cocktail Healthy</li>
-                        </ul>
-                        <a href="contact.html" class="btn-outline">Sélectionner</a>
                     </div>
-                    <!-- Challenge (Best Seller) -->
-                    <div class="price-card glass-card featured reveal-up delay-1">
-                        <div class="badge">Best Seller</div>
-                        <div class="card-header">
-                            <h3>Challenge</h3>
-                            <span class="location">Paris - 1 Jour</span>
+
+                    <!-- Panel 2: Tournament (Featured) -->
+                    <div class="monolith-panel featured glass-card" id="panel-tournament">
+                        <div class="panel-overlay-gradient"></div>
+                        <div class="panel-content-wrapper">
+                            <img src="images/icon_trophy_neon.svg" class="neon-icon-img" alt="Trophy">
+                            <h3>Journée Corporate</h3>
+                            <div class="panel-details">
+                                <p>Demi-journée complète avec coaching professionnel et tournoi interne – 12 à 32
+                                    participants. Idéal pour séminaires d'entreprise.</p>
+                                <a href="contact.html" class="cta-btn small">Réserver</a>
+                            </div>
                         </div>
-                        <ul class="features">
-                            <li>Matin Coaching</li>
-                            <li>Déjeuner Nutritionniste</li>
-                            <li>Tournoi Homologué</li>
-                            <li class="highlight">Inclus : Massage/Kiné</li>
-                        </ul>
-                        <a href="contact.html" class="cta-btn main full-width">Sélectionner</a>
                     </div>
-                    <!-- Executive Retreat -->
-                    <div class="price-card glass-card reveal-up delay-2">
-                        <div class="card-header">
-                            <h3>Executive Retreat</h3>
-                            <span class="location">Agadir - 3 Jours</span>
+
+                    <!-- Panel 3: Custom -->
+                    <div class="monolith-panel glass-card" id="panel-custom">
+                        <div class="panel-overlay-gradient"></div>
+                        <div class="panel-content-wrapper">
+                            <img src="images/icon_compass_neon.svg" class="neon-icon-img" alt="Custom Solutions">
+                            <h3>Programme Sur Mesure</h3>
+                            <div class="panel-details">
+                                <p>Solutions personnalisées adaptées à vos objectifs. Destination, durée et prestations
+                                    configurables selon vos besoins.</p>
+                                <a href="contact.html" class="cta-btn small">Configurer</a>
+                            </div>
                         </div>
-                        <ul class="features">
-                            <li>Hôtel VIP</li>
-                            <li>Stage Intensif</li>
-                            <li>Surf / Golf</li>
-                            <li>Conférences Business</li>
-                        </ul>
-                        <a href="contact.html" class="btn-outline">Sélectionner</a>
                     </div>
+
                 </div>
             </div>
         </section>

@@ -612,7 +612,7 @@ header nav ul li a:hover {
 }
 
 .large-title {
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 900;
     text-transform: uppercase;
     margin-bottom: 40px;
@@ -894,7 +894,7 @@ footer {
 
 @media (max-width: 768px) {
     .large-title {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .academy-description p {
@@ -951,6 +951,204 @@ footer {
 /* ----------------------------------------------------
    HERO RACKET (3D Floating)
 ------------------------------------------------------- */
+/* --- Floating ZYSS Balls (Logo Edition) --- */
+.hero-balls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.css-padel-ball {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #f4ff5f, #c2e812);
+    box-shadow:
+        inset -5px -5px 20px rgba(0, 0, 0, 0.15),
+        0 5px 15px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(194, 232, 18, 0.3);
+    /* Neon glow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatBall 8s ease-in-out infinite alternate;
+}
+
+.ball-logo {
+    width: 70%;
+    height: 70%;
+    background-image: url('images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+    /* Blends logo into the ball texture */
+    transform: rotate(-15deg);
+}
+
+/* --- Ball Distribution (The "Throw" Field) --- */
+
+/* Foreground (Closest, Big) - Moved behind text and adjusted to not be cut */
+.ball-1 {
+    width: 140px;
+    height: 140px;
+    bottom: 5%;
+    left: 8%;
+    filter: blur(3px);
+    z-index: 1;
+    animation: floatBallA 9s ease-in-out infinite alternate;
+    opacity: 0.7;
+}
+
+.ball-2 {
+    width: 110px;
+    height: 110px;
+    top: 10%;
+    right: 5%;
+    filter: blur(2px);
+    z-index: 1;
+    animation: floatBallB 8s ease-in-out infinite alternate;
+}
+
+/* Midground (Focus) - Varied Motion */
+.ball-3 {
+    width: 70px;
+    height: 70px;
+    top: 20%;
+    left: 20%;
+    z-index: 1;
+    animation: floatBallC 7s ease-in-out infinite alternate;
+}
+
+.ball-4 {
+    width: 60px;
+    height: 60px;
+    bottom: 30%;
+    right: 20%;
+    z-index: 1;
+    animation: floatBallA 8s ease-in-out infinite alternate-reverse;
+}
+
+.ball-5 {
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    left: 15%;
+    z-index: 1;
+    animation: floatBallB 6s ease-in-out infinite alternate;
+}
+
+.ball-6 {
+    width: 55px;
+    height: 55px;
+    top: 15%;
+    left: 50%;
+    z-index: 1;
+    animation: floatBallC 9s ease-in-out infinite alternate-reverse;
+}
+
+/* Background (Far, Small, Blurry) - Choatic Motion */
+.ball-7 {
+    width: 30px;
+    height: 30px;
+    top: 40%;
+    right: 40%;
+    filter: blur(1px);
+    opacity: 0.8;
+    animation: floatBallA 10s ease-in-out infinite alternate;
+}
+
+.ball-8 {
+    width: 25px;
+    height: 25px;
+    bottom: 20%;
+    left: 35%;
+    filter: blur(1px);
+    opacity: 0.7;
+    animation: floatBallB 12s ease-in-out infinite alternate-reverse;
+}
+
+.ball-9 {
+    width: 20px;
+    height: 20px;
+    top: 10%;
+    left: 70%;
+    filter: blur(2px);
+    opacity: 0.6;
+    animation: floatBallC 11s ease-in-out infinite alternate;
+}
+
+.ball-10 {
+    width: 15px;
+    height: 15px;
+    bottom: 50%;
+    right: 10%;
+    filter: blur(2px);
+    opacity: 0.6;
+    animation: floatBallA 13s ease-in-out infinite alternate;
+}
+
+.ball-11 {
+    width: 18px;
+    height: 18px;
+    top: 5%;
+    left: 30%;
+    filter: blur(2px);
+    opacity: 0.5;
+    animation: floatBallB 14s ease-in-out infinite alternate;
+}
+
+.ball-12 {
+    width: 12px;
+    height: 12px;
+    bottom: 10%;
+    right: 60%;
+    filter: blur(3px);
+    opacity: 0.4;
+    animation: floatBallC 15s ease-in-out infinite alternate-reverse;
+}
+
+/* Varied Floating Animations */
+@keyframes floatBallA {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(20px, -40px) rotate(15deg);
+    }
+}
+
+@keyframes floatBallB {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-30px, 20px) rotate(-10deg);
+    }
+}
+
+@keyframes floatBallC {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(15px, 15px) rotate(5deg);
+    }
+
+    100% {
+        transform: translate(-10px, -10px) rotate(20deg);
+    }
+}
+
 .hero-racket-container {
     position: absolute;
     top: 50%;
@@ -1104,3 +1302,246 @@ footer {
 /* 2. Dynamic Text Reveal (Removed) */
 
 /* 2. Dynamic Text Reveal (Removed) */
+
+/* --- Corporate Scenery (Cinematic) --- */
+.corporate-bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/corporate_cinematic_bg.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.corporate-bg-layer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 16, 36, 0.7);
+    /* Dark overlay for text readability */
+    backdrop-filter: blur(5px);
+    /* Soft focus background */
+}
+
+.corporate-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 50px;
+}
+
+/* --- Corporate Hologram --- */
+.hologram-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    /* Behind monoliths */
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hologram-asset {
+    width: 80%;
+    /* Adjust size */
+    max-width: 1200px;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    /* Removes black, keeps neon */
+    transition: transform 0.1s linear;
+    /* For JS parallax */
+    will-change: transform;
+    animation: holo-pulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes holo-pulse {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.2)) brightness(1);
+    }
+
+    100% {
+        filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6)) brightness(1.2);
+    }
+}
+
+/* --- Corporate Monoliths (Enhanced) --- */
+.monolith-container {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    /* High impact */
+    gap: 15px;
+    align-items: stretch;
+}
+
+.monolith-panel {
+    flex: 1;
+    position: relative;
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    /* Ultra smooth 'Expo' ease */
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Background Images (Updated to Light/Neon Vibe) */
+#panel-teambuilding {
+    background-image: url('images/monolith_teambuilding_light.png');
+}
+
+#panel-tournament {
+    background-image: url('images/monolith_tournament_light.png');
+}
+
+#panel-custom {
+    background-image: url('images/monolith_custom_light.png');
+}
+
+/* Dark Gradient Overlay for Readability */
+.panel-overlay-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Stronger gradient for lighter images */
+    background: linear-gradient(to top, rgba(5, 16, 36, 0.98) 15%, rgba(5, 16, 36, 0.6) 50%, rgba(5, 16, 36, 0.2) 100%);
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.monolith-panel:hover .panel-overlay-gradient {
+    background: linear-gradient(to top, rgba(5, 16, 36, 1) 25%, rgba(5, 16, 36, 0.7) 65%, rgba(5, 16, 36, 0.3) 100%);
+}
+
+/* Content Positioning */
+.panel-content-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hover Expansion */
+.monolith-panel:hover {
+    flex: 3.5;
+    /* Dominant expansion */
+    box-shadow: 0 0 50px rgba(140, 198, 63, 0.3);
+    border-color: rgba(140, 198, 63, 0.8);
+}
+
+/* Typography & Icons */
+.panel-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 15px rgba(140, 198, 63, 0.6));
+    transition: transform 0.5s ease;
+}
+
+.neon-icon-img {
+    width: 100px;
+    /* Adjust size */
+    height: auto;
+    margin-bottom: 20px;
+    mix-blend-mode: screen;
+    /* Removes black background */
+    filter: drop-shadow(0 0 10px rgba(140, 198, 63, 0.8));
+    /* Neon Glow */
+    transition: transform 0.5s ease;
+}
+
+.monolith-panel:hover .neon-icon-img {
+    transform: scale(1.1);
+}
+
+.monolith-panel h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+    color: #ffffff;
+    /* Pure white as requested */
+    opacity: 1;
+    transition: all 0.5s ease;
+    /* Black drop shadow + Subtle white glow + Faint neon hint */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.3), 0 0 30px rgba(140, 198, 63, 0.2);
+}
+
+.monolith-panel:hover h3 {
+    color: var(--accent-neon);
+    transform: scale(1.1);
+    margin-bottom: 25px;
+}
+
+/* Reveal Details */
+.panel-details {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(40px);
+    transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.monolith-panel:hover .panel-details {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+}
+
+.panel-details p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .monolith-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .monolith-panel {
+        height: 400px;
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .monolith-panel:hover {
+        flex: none;
+        /* No expansion on mobile, simple stack */
+    }
+
+    .panel-details {
+        opacity: 1;
+        max-height: none;
+        transform: none;
+        margin-top: 20px;
+    }
+}
+
+}

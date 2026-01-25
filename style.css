@@ -313,7 +313,17 @@ header nav ul li a:hover {
     margin: 6px 0;
 }
 
-/* Hero Section */
+/* Academy Levels */
+.glass-card .level-tag {
+    color: var(--accent-neon);
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer Section */
 .hero {
     height: 100vh;
     display: flex;

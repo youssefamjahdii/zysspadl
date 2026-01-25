@@ -72,43 +72,66 @@
 
         <section class="section academy-content" id="academy-content">
             <div class="container">
-                <div class="cards-grid">
-                    <div class="glass-card reveal-up">
-                        <img src="images/matrix_partenaires_jeux.png" alt="Découverte"
-                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
-                        <div class="icon">🏓</div>
-                        <h3>À la découverte du padel</h3>
-                        <p class="level-tag">Niveau 1-3</p>
-                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
-                            Découverte du padel à travers l'apprentissage des bases du jeu, des règles et des
-                            équipements. Initiation aux spécificités du padel : vitres, placements, jeu à droite et à
-                            gauche. Acquisition des gestes fondamentaux pour poser la balle, gagner en régularité et
-                            prendre confiance, le tout dans une approche progressive.
-                        </p>
+                <div class="deck-carousel relative-container">
+                    <button class="deck-btn prev-btn" id="deckPrev">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+
+                    <div class="deck-track">
+                        <!-- Card 1 -->
+                        <div class="glass-card deck-card active" data-index="0">
+                            <img src="images/matrix_partenaires_jeux.png" alt="Découverte"
+                                style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                            <div class="icon">🏓</div>
+                            <h3>À la découverte du padel</h3>
+                            <p class="level-tag">Niveau 1-3</p>
+                            <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                                Découverte du padel à travers l'apprentissage des bases du jeu, des règles et des
+                                équipements. Initiation aux spécificités du padel : vitres, placements, jeu à droite et
+                                à
+                                gauche. Acquisition des gestes fondamentaux pour poser la balle, gagner en régularité et
+                                prendre confiance, le tout dans une approche progressive.
+                            </p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass-card deck-card next" data-index="1">
+                            <img src="images/matrix_academy.png" alt="Construire"
+                                style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                            <div class="icon">🏗️</div>
+                            <h3>Construire le point</h3>
+                            <p class="level-tag">Niveau 4-6</p>
+                            <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                                Apprendre à lire les situations avec patience, à faire les bons choix au bon moment et à
+                                utiliser les vitres avec intention. Affiner ses placements, gagner en régularité et en
+                                confiance pour jouer plus juste, plus serein et plus efficace.
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass-card deck-card prev" data-index="2">
+                            <img src="images/matrix_advanced.png" alt="Game Changer"
+                                style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                            <div class="icon">⚡</div>
+                            <h3>Game changer</h3>
+                            <p class="level-tag">Niveau 6-8</p>
+                            <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                                Dédié aux joueurs qui veulent performer. Intensité maximale, précision, mental et
+                                décisions
+                                rapides sous pression. Chaque séance pousse le jeu au niveau supérieur.
+                            </p>
+                        </div>
                     </div>
-                    <div class="glass-card reveal-up delay-1">
-                        <img src="images/matrix_academy.png" alt="Construire"
-                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
-                        <div class="icon">🏗️</div>
-                        <h3>Construire le point</h3>
-                        <p class="level-tag">Niveau 4-6</p>
-                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
-                            Apprendre à lire les situations avec patience, à faire les bons choix au bon moment et à
-                            utiliser les vitres avec intention. Affiner ses placements, gagner en régularité et en
-                            confiance pour jouer plus juste, plus serein et plus efficace.
-                        </p>
-                    </div>
-                    <div class="glass-card reveal-up delay-2">
-                        <img src="images/matrix_advanced.png" alt="Game Changer"
-                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
-                        <div class="icon">⚡</div>
-                        <h3>Game changer</h3>
-                        <p class="level-tag">Niveau 6-8</p>
-                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
-                            Dédié aux joueurs qui veulent performer. Intensité maximale, précision, mental et décisions
-                            rapides sous pression. Chaque séance pousse le jeu au niveau supérieur.
-                        </p>
-                    </div>
+
+                    <button class="deck-btn next-btn" id="deckNext">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>

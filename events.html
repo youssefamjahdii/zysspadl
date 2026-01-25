@@ -57,11 +57,16 @@
         </div>
         </div>
 
-        <div class="container">
-            <div class="cards-grid">
+        <div class="deck-carousel relative-container">
+            <button class="deck-btn prev-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+            <div class="deck-track">
                 <!-- 1. Tournois -->
-                <div class="glass-card reveal-up">
-                    <img src="images/matrix_events.png" alt="Tournois"
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_tournois.png" alt="Tournois"
                         style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
                     <div class="icon">🏆</div>
                     <h3>Organisation de Tournois</h3>
@@ -72,8 +77,8 @@
                 </div>
 
                 <!-- 2. Business -->
-                <div class="glass-card reveal-up delay-1">
-                    <img src="images/matrix_corporate.png" alt="Business"
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_business.png" alt="Business"
                         style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
                     <div class="icon">🤝</div>
                     <h3>Événements Business</h3>
@@ -83,9 +88,21 @@
                     </p>
                 </div>
 
-                <!-- 3. Stages -->
-                <div class="glass-card reveal-up delay-2">
-                    <img src="images/matrix_academy.png" alt="Stages"
+                <!-- 3. Ligues -->
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_ligues.png" alt="Ligues"
+                        style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                    <div class="icon">🏅</div>
+                    <h3>Ligues et Compétitions</h3>
+                    <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                        Animation de championnats internes, ladders et défis réguliers. Système de classement et
+                        récompenses pour maintenir l'engagement.
+                    </p>
+                </div>
+
+                <!-- 4. Stages -->
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_stages.png" alt="Stages"
                         style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
                     <div class="icon">🎾</div>
                     <h3>Stages Intensifs</h3>
@@ -95,18 +112,47 @@
                     </p>
                 </div>
 
-                <!-- 4. Ligues -->
-                <div class="glass-card reveal-up delay-3">
-                    <img src="images/matrix_partenaires_jeux.png" alt="Ligues"
+                <!-- 5. Stages international -->
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_travel_std.png" alt="Stage Std"
                         style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
-                    <div class="icon">🏅</div>
-                    <h3>Ligues et Compétitions</h3>
+                    <div class="icon">✈️</div>
+                    <h3>Stage International Standard</h3>
                     <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
-                        Animation de championnats internes, ladders et défis réguliers. Système de classement et
-                        récompenses pour maintenir l'engagement.
+                        2 jours à l'étranger – 1299€/pers – Formule tout inclus : vols, transferts, hébergement 4* et
+                        padel intensif.
+                    </p>
+                </div>
+
+                <!-- 6. Stages international prestige -->
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_travel_lux.png" alt="Stage Luxe"
+                        style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                    <div class="icon">💎</div>
+                    <h3>Stage International Prestige</h3>
+                    <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                        Expérience luxe 2-3 jours – 1899€/pers – Hébergement 5*, coaching exclusif, activités premium et
+                        services VIP.
+                    </p>
+                </div>
+
+                <!-- 7. Camp Excellence -->
+                <div class="glass-card deck-card">
+                    <img src="images/event_deck_excellence.png" alt="Excellence"
+                        style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                    <div class="icon">🔥</div>
+                    <h3>Camp Excellence</h3>
+                    <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                        Format 1-2 jours incluant branding personnalisé et production de contenu photo/vidéo – 16 à 64
+                        participants.
                     </p>
                 </div>
             </div>
+            <button class="deck-btn next-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6" />
+                </svg>
+            </button>
         </div>
     </main>
     <footer>

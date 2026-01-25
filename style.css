@@ -792,6 +792,106 @@ footer {
     }
 }
 
+/* Deck Carousel Styles */
+.deck-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    /* Fixed height for card container */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.deck-track {
+    position: relative;
+    width: 400px;
+    /* Card width base */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deck-card {
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    top: 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    /* Dynamic Spread Logic using --offset */
+    /* Ensure default offset if JS is slow */
+    --offset: 0;
+    --abs-offset: max(var(--offset), calc(var(--offset) * -1));
+
+    z-index: calc(10 - var(--abs-offset));
+    opacity: calc(1 - (var(--abs-offset) * 0.1));
+    filter: blur(calc(var(--abs-offset) * 2px));
+
+    /* Spread: 40% shift per card, scaling down, pushing back */
+    transform:
+        translateY(-50%) translateX(calc(var(--offset) * 40%)) translateZ(calc(var(--abs-offset) * -50px)) scale(calc(1 - (var(--abs-offset) * 0.1))) rotateY(calc(var(--offset) * -5deg));
+
+    pointer-events: none;
+}
+
+/* Active card override */
+.deck-card.active {
+    pointer-events: auto;
+    filter: blur(0);
+    opacity: 1;
+    z-index: 20;
+    /* Ensure on top */
+}
+
+/* Hover Effect: Shine & Glow (No Movement) */
+.deck-card.active:hover {
+    /* Maintain exact position to prevent "dipping" */
+    transform: translateY(-50%) translateZ(0) scale(1);
+    /* Shine effect */
+    filter: brightness(1.1) contrast(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+.deck-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(5, 16, 36, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--accent-neon);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.deck-btn:hover {
+    background: var(--accent-neon);
+    color: var(--text-white);
+    box-shadow: 0 0 20px rgba(140, 198, 63, 0.4);
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
 @media (max-width: 768px) {
     .large-title {
         font-size: 3rem;

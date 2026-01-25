@@ -216,6 +216,66 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Dynamic Text Reveal (Removed per user request) ---
     // Kept static for reliability.
 
+    // --- Deck Carousel Logic ---
+    // --- Deck Carousel Logic (Multi-Instance) ---
+    const carousels = document.querySelectorAll('.deck-carousel');
+
+    carousels.forEach((carousel, index) => {
+        const deckCards = carousel.querySelectorAll('.deck-card');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+
+        if (deckCards.length > 0) {
+            let currentIndex = 0;
+            const totalCards = deckCards.length;
+
+            function updateDeck() {
+                deckCards.forEach((card, i) => {
+                    card.classList.remove('active', 'prev', 'next');
+
+                    // Calculate Circular Distance (Offset)
+                    let offset = (i - currentIndex + totalCards) % totalCards;
+                    // Normalize to e.g. -3 to +3 for 7 cards
+                    if (offset > totalCards / 2) {
+                        offset -= totalCards;
+                    }
+
+                    // Set CSS Variable for styling
+                    card.style.setProperty('--offset', offset);
+
+                    // Optional: Keep classes for specific legacy overrides if needed, 
+                    // or just rely on css vars. Active is good to keep.
+                    if (offset === 0) {
+                        card.classList.add('active');
+                    } else if (offset === -1) {
+                        card.classList.add('prev');
+                    } else if (offset === 1) {
+                        card.classList.add('next');
+                    }
+                });
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = (currentIndex + 1) % totalCards;
+                    updateDeck();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+                    updateDeck();
+                });
+            }
+
+            // Initialize this carousel
+            updateDeck();
+        }
+    });
+
     // --- Optimized Scroll Handler (Throttled via rAF) ---
     let isScrolling = false;
 

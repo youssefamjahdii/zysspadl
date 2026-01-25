@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Mouse Move Tilt (Optional) ---
     // HERO RACKET 3D PARALLAX
-    // --- Mouse Move Tilt (Optional) ---
-    // HERO RACKET 3D PARALLAX
     const heroRacket = document.getElementById('heroRacket');
     const heroRacket2 = document.getElementById('heroRacket2');
 
@@ -92,30 +90,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Custom Glow Cursor ---
+    // --- Custom Glow Cursor (with Trailing Effect) ---
     const cursor = document.querySelector('.custom-cursor');
     if (cursor) {
-        // Activate cursor on first move
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let cursorX = window.innerWidth / 2;
+        let cursorY = window.innerHeight / 2;
+
+        // Track real mouse position
         document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
             if (!document.body.classList.contains('cursor-active')) {
                 document.body.classList.add('cursor-active');
+                cursor.style.opacity = '1';
             }
+        });
 
-            // Direct follow for responsiveness, add inertia if desired via requestAnimationFrame
-            // Simple direct follow is often snappier
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+        // Loop for fluid movement (Linear Interpolation)
+        function animateCursor() {
+            // LERP: Move 100% of the distance towards target per frame (Instant)
+            const ease = 1;
 
-            // Optional: Scale up on hoverables
-            if (e.target.closest('a, button, .matrix-card')) {
-                cursor.style.transform = 'translate(-50%, -50%) scale(2)';
-                cursor.style.backgroundColor = 'transparent';
-                cursor.style.border = '2px solid var(--accent-neon)';
-                cursor.style.filter = 'blur(0px)';
-            } else {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.backgroundColor = 'var(--accent-neon)';
-                cursor.style.border = 'none';
-                cursor.style.filter = 'blur(2px)';
+            cursorX += (mouseX - cursorX) * ease;
+            cursorY += (mouseY - cursorY) * ease;
+
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        }
+
+        // Start loop
+        animateCursor();
+
+        // Hover Effect Logic
+        const hoverTags = 'a, button, .matrix-card, .cta-btn, .glass-card, .partner-logo';
+        document.addEventListener('mouseover', (e) => {
+            if (e.target.closest(hoverTags)) {
+                cursor.classList.add('hovered');
+            }
+        });
+        document.addEventListener('mouseout', (e) => {
+            if (e.target.closest(hoverTags)) {
+                cursor.classList.remove('hovered');
             }
         });
     }

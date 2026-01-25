@@ -789,28 +789,35 @@ footer {
 ------------------------------------------------------- */
 
 /* 1. Custom Glow Cursor */
+/* 1. Custom Glow Cursor */
 .custom-cursor {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
     background: var(--accent-neon);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 20px 5px rgba(140, 198, 63, 0.6), 0 0 50px 20px rgba(140, 198, 63, 0.2);
-    /* mix-blend-mode: exclusion;  Using normal for now as exclusion can look muddy on dark bg */
-    filter: blur(2px);
+    /* Always centered on coordinates */
+    box-shadow: 0 0 15px 2px rgba(140, 198, 63, 0.8), 0 0 30px 10px rgba(140, 198, 63, 0.4);
+    filter: blur(0px);
+    /* Sharp core, glowing edges via shadow */
     opacity: 0;
-    /* Hidden initially until JS activates it */
-    transition: opacity 0.3s, transform 0.1s;
-    will-change: left, top;
+    will-change: left, top, transform;
+    transition: transform 0.3s ease, background 0.3s ease, border 0.3s ease;
 }
 
-body.cursor-active .custom-cursor {
-    opacity: 1;
+.custom-cursor.hovered {
+    transform: translate(-50%, -50%) scale(2.5);
+    background: transparent;
+    border: 2px solid var(--accent-neon);
+    box-shadow: 0 0 20px 5px rgba(140, 198, 63, 0.5);
 }
+
+/* 3. Floating Scroll Ball */
+/* 2. Dynamic Text Reveal (Removed) */
 
 /* 2. Dynamic Text Reveal (Removed) */

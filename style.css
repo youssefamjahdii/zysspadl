@@ -466,6 +466,87 @@ header nav ul li a:hover {
     transform: translateX(0);
 }
 
+/* Academy Hero Text (Reusable as Glass Hero Text) */
+.academy-hero-text,
+.glass-hero-text {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px -10px rgba(5, 16, 36, 0.05);
+}
+
+.academy-hero-text::before,
+.glass-hero-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-neon), transparent);
+}
+
+.academy-hero-text .lead,
+.glass-hero-text .lead {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-white);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.academy-hero-text .separator,
+.glass-hero-text .separator {
+    width: 50px;
+    height: 3px;
+    background: var(--accent-neon);
+    margin: 0 auto 25px;
+    border-radius: 2px;
+}
+
+.academy-hero-text p:last-child,
+.glass-hero-text p:last-child {
+    font-size: 1.1rem;
+    color: var(--text-grey);
+    font-weight: 500;
+}
+
+/* Events Hero Racket */
+.events-hero-racket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    /* Adjust size as needed */
+    z-index: -1;
+    /* Behind siblings */
+    opacity: 0.8;
+    pointer-events: auto;
+    /* transition removed for JS physics */
+    filter: drop-shadow(0 0 30px rgba(140, 198, 63, 0.2));
+}
+
+/* Ensure content is above racket */
+.section-header,
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* We make the hero text container transparent to clicks so we can grab the racket behind it */
+.events-hero-container .section-header {
+    pointer-events: none;
+}
+
 /* Academy Hero Section */
 .academy-hero {
     position: relative;

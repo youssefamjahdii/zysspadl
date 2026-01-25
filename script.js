@@ -88,6 +88,70 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
     }
+    // --- Events Racket Advanced Logic (Float & Hold) ---
+    const eventsRacket = document.getElementById('eventsRacket');
+    if (eventsRacket) {
+        let currentX = 0;
+        let currentY = 0;
+        let targetX = 0;
+        let isHovering = false;
+        let time = 0;
+
+        // Mouse Tracking
+        document.addEventListener('mousemove', (e) => {
+            if (!isHovering) return;
+            const { clientX } = e;
+            const { innerWidth } = window;
+
+            // Map mouse to full screen width range (+/- 45vw)
+            // Center (0.5) is 0.
+            const xRatio = (clientX / innerWidth - 0.5) * 2; // -1 to 1
+            // User wants to move across whole hero section. 
+            // Let's give it a wide range, e.g., +/- 40% of screen width (40vw).
+            // in pixels:
+            targetX = xRatio * (innerWidth * 0.4);
+        });
+
+        // Interaction States
+        eventsRacket.addEventListener('mouseenter', () => {
+            isHovering = true;
+            eventsRacket.style.cursor = 'grab';
+        });
+
+        eventsRacket.addEventListener('mouseleave', () => {
+            isHovering = false;
+            eventsRacket.style.cursor = 'default';
+        });
+
+        // Animation Loop
+        function animateRacket() {
+            time += 0.03; // Float speed
+
+            if (isHovering) {
+                // "Holding" state: Smoothly follow mouse X, stabilize Y
+                // Lerp factor 0.1 for "smooth" feel
+                currentX += (targetX - currentX) * 0.1;
+
+                // Stabilize Y to 0 (center) when held, with damping
+                currentY += (0 - currentY) * 0.1;
+            } else {
+                // "Floating" state: X stays sticky, Y oscillates
+                const floatOffset = Math.sin(time) * 15; // +/- 15px float
+                // Lerp Y to float position for smooth transition from hold
+                currentY += (floatOffset - currentY) * 0.05;
+            }
+
+            // Apply Transform
+            // Rotate slightly based on X position for natural feel
+            const rotateDeg = (currentX / window.innerWidth) * 10;
+
+            eventsRacket.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px)) rotate(${rotateDeg}deg)`;
+
+            requestAnimationFrame(animateRacket);
+        }
+
+        animateRacket();
+    }
 
     // --- Custom Glow Cursor ---
     // --- Custom Glow Cursor (with Trailing Effect) ---

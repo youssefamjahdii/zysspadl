@@ -364,19 +364,7 @@ header nav ul li a:hover {
 }
 
 .hero-animation {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, #00C6FF, #0072FF);
-    /* Premium Blue */
-    -webkit-mask-image: url('images/padel-silhouette.png');
-    mask-image: url('images/padel-silhouette.png');
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    animation: float 4s ease-in-out infinite, pulse-glow 3s infinite alternate;
+    display: none;
 }
 
 @keyframes float {

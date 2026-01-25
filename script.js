@@ -88,28 +88,35 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
     }
-    // --- Events Racket Advanced Logic (Float & Hold) ---
+    // --- Events Racket Advanced Logic (Float & Hold & Glow) ---
     const eventsRacket = document.getElementById('eventsRacket');
+    const heroTextContainer = document.querySelector('.events-hero-text-container'); // Need to ensure this class exists or use existing
+    // Actually let's look for the text container in events.html. It's .glass-hero-text inside .section-header.
+    // Better selector:
+    const eventsText = document.querySelector('.events-page .glass-hero-text') || document.querySelector('.section-header .glass-hero-text');
+
     if (eventsRacket) {
         let currentX = 0;
         let currentY = 0;
         let targetX = 0;
+        let targetY = 0; // Vertical target
         let isHovering = false;
         let time = 0;
 
         // Mouse Tracking
         document.addEventListener('mousemove', (e) => {
             if (!isHovering) return;
-            const { clientX } = e;
-            const { innerWidth } = window;
+            const { clientX, clientY } = e;
+            const { innerWidth, innerHeight } = window;
 
-            // Map mouse to full screen width range (+/- 45vw)
-            // Center (0.5) is 0.
-            const xRatio = (clientX / innerWidth - 0.5) * 2; // -1 to 1
-            // User wants to move across whole hero section. 
-            // Let's give it a wide range, e.g., +/- 40% of screen width (40vw).
-            // in pixels:
+            // Map X: +/- 40vw
+            const xRatio = (clientX / innerWidth - 0.5) * 2;
             targetX = xRatio * (innerWidth * 0.4);
+
+            // Map Y: +/- 30vh (constrained to hero roughly)
+            // Center of screen is 0. 
+            const yRatio = (clientY / innerHeight - 0.5) * 2;
+            targetY = yRatio * (innerHeight * 0.3); // +/- 30% of viewport height
         });
 
         // Interaction States
@@ -128,23 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
             time += 0.03; // Float speed
 
             if (isHovering) {
-                // "Holding" state: Smoothly follow mouse X, stabilize Y
-                // Lerp factor 0.1 for "smooth" feel
+                // "Holding" state: Smoothly follow mouse
                 currentX += (targetX - currentX) * 0.1;
-
-                // Stabilize Y to 0 (center) when held, with damping
-                currentY += (0 - currentY) * 0.1;
+                currentY += (targetY - currentY) * 0.1;
             } else {
-                // "Floating" state: X stays sticky, Y oscillates
-                const floatOffset = Math.sin(time) * 15; // +/- 15px float
-                // Lerp Y to float position for smooth transition from hold
-                currentY += (floatOffset - currentY) * 0.05;
+                // "Floating" state: Sticky position + float
+                const floatOffset = Math.sin(time) * 15;
+                // We apply float on top of the LAST position (currentY should be stable base)
+                // Actually to make it "stick", currentY remains as the base. 
+                // We calculate a RENDER Y which includes float.
+                // But if we modify currentY, it drifts. 
+                // Alternative: TargetY stays at last known input. CurrentY lerps to TargetY + Float.
+                // If not hovering, TargetY is constant (last mouse pos).
+
+                const floatY = Math.sin(time) * 10;
+                currentY += ((targetY + floatY) - currentY) * 0.05;
             }
 
             // Apply Transform
-            // Rotate slightly based on X position for natural feel
             const rotateDeg = (currentX / window.innerWidth) * 10;
-
             eventsRacket.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px)) rotate(${rotateDeg}deg)`;
 
             requestAnimationFrame(animateRacket);

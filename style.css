@@ -323,6 +323,23 @@ header nav ul li a:hover {
     letter-spacing: 1px;
 }
 
+/* Racket Collision Glow Effect */
+.glass-hero-text.neon-glow-active p,
+.glass-hero-text.neon-glow-active span {
+    color: #fff !important;
+    text-shadow:
+        0 0 10px var(--accent-neon),
+        0 0 20px var(--accent-neon),
+        0 0 40px var(--accent-neon);
+    transition: all 0.3s ease;
+}
+
+/* Ensure original transitions are smooth */
+.glass-hero-text p,
+.glass-hero-text span {
+    transition: all 0.3s ease;
+}
+
 /* Footer Section */
 .hero {
     height: 100vh;
@@ -515,8 +532,10 @@ header nav ul li a:hover {
 .academy-hero-text p:last-child,
 .glass-hero-text p:last-child {
     font-size: 1.1rem;
-    color: var(--text-grey);
-    font-weight: 500;
+    color: #003366 !important;
+    /* Visible Navy */
+    font-weight: 600;
+    /* Bold for visibility */
 }
 
 /* Events Hero Racket */

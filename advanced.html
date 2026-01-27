@@ -45,26 +45,36 @@
 
     <!-- Page Content -->
     <main style="padding-top: 120px; padding-bottom: 0px;">
+
+        <!-- 1. HERO SECTION (Title Area) -->
         <!-- 1. HERO SECTION (Title Area) -->
         <section id="advanced-hero"
-            style="min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative;">
-            <div class="section-header reveal-up">
-                <h1 class="large-title" style="font-size: 6rem; margin-bottom: 20px;">ZYSS <span
+            style="min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; background-color: transparent; overflow: hidden;">
+
+            <!-- Neural Canvas (Interactive Layer) -->
+            <canvas id="neural-canvas"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+
+            <!-- Hero Content (Above Canvas) -->
+            <div class="section-header reveal-up" style="position: relative; z-index: 2;">
+                <h1 class="large-title" style="font-size: 6rem; margin-bottom: 20px; color: #051024;">ZYSS <span
                         class="text-gradient">ADVANCED</span></h1>
-                <p class="subtitle" style="font-size: 1.5rem; letter-spacing: 2px;">Visual Protocol Engine</p>
+                <p class="subtitle" style="font-size: 1.5rem; letter-spacing: 2px; color: #051024;">Visual Protocol
+                    Engine</p>
                 <div class="separator"
                     style="width: 80px; height: 4px; background: var(--accent-neon); margin: 30px auto; border-radius: 2px;">
                 </div>
-                <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">
+                <p style="max-width: 600px; margin: 0 auto; color: rgba(5, 16, 36, 0.8);">
                     Découvrez l'avenir de votre performance. Une analyse biométrique temps réel couplée à un programme
                     d'élite.
                 </p>
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="scroll-indicator" style="position: absolute; bottom: 40px; animation: bounce 2s infinite;">
+            <div class="scroll-indicator"
+                style="position: absolute; bottom: 40px; animation: bounce 2s infinite; z-index: 2;">
                 <span
-                    style="display: block; width: 30px; height: 50px; border: 2px solid rgba(255,255,255,0.3); border-radius: 15px; position: relative;">
+                    style="display: block; width: 30px; height: 50px; border: 2px solid rgba(5, 16, 36, 0.3); border-radius: 15px; position: relative;">
                     <span
                         style="display: block; width: 6px; height: 6px; background: var(--accent-neon); border-radius: 50%; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);"></span>
                 </span>
@@ -306,6 +316,7 @@
 
     <div class="custom-cursor"></div>
     <script src="script.js"></script>
+    <script src="neural_hero.js"></script>
     <!-- Modular Visual Engine -->
     <link rel="stylesheet" href="advanced_engine.css">
     <script src="advanced_engine.js"></script>

@@ -315,5 +315,49 @@ document.addEventListener('DOMContentLoaded', () => {
             isScrolling = true;
         }
     });
+}); // This closes the main DOMContentLoaded for the scroll handler and other elements.
 
+// Footer Magnetic Ball Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.querySelector('footer');
+    const magneticBall = document.querySelector('.magnetic-ball');
+
+    if (footer && magneticBall) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let ballX = 0;
+        let ballY = 0;
+        let isFooterHovered = false;
+
+        footer.addEventListener('mouseenter', () => {
+            isFooterHovered = true;
+            magneticBall.style.opacity = '1';
+        });
+
+        footer.addEventListener('mouseleave', () => {
+            isFooterHovered = false;
+            magneticBall.style.opacity = '0';
+        });
+
+        footer.addEventListener('mousemove', (e) => {
+            const rect = footer.getBoundingClientRect();
+            mouseX = e.clientX - rect.left;
+            mouseY = e.clientY - rect.top;
+        });
+
+        function animateBall() {
+            if (isFooterHovered) {
+                // Smooth Lerp
+                ballX += (mouseX - ballX) * 0.1;
+                ballY += (mouseY - ballY) * 0.1;
+
+                // Center the ball on cursor (30px is half of 60px size)
+                magneticBall.style.transform = `translate(${ballX - 30}px, ${ballY - 30}px)`;
+            }
+            requestAnimationFrame(animateBall);
+        }
+        animateBall();
+    }
+
+    // Legacy Visual Engine logic removed to prevent conflicts with advanced_engine.js
 });

@@ -1,0 +1,269 @@
+/* =========================================
+   Advanced Page: Visual Engine (Modular Override)
+   ========================================= */
+
+/* Visual Engine Container */
+.visual-engine-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Segmented Ring Styling */
+.circular-unlock-system.segmented-style {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+/* Scanner Overlay (The "Infinite Boucle") */
+.circular-unlock-system.segmented-style::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 280deg,
+            rgba(140, 198, 63, 0.1) 320deg,
+            rgba(140, 198, 63, 0.0) 360deg);
+    border-radius: 50%;
+    animation: scannerRotate 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Center Display */
+.center-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3D LOCK COMPOSITE */
+.lock-icon-container {
+    position: relative;
+    width: 130px;
+    /* Big Size */
+    height: 150px;
+    margin-bottom: 20px;
+    /* Above text */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align bottom */
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.lock-body {
+    width: 100px;
+    height: auto;
+    z-index: 2;
+    position: relative;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.lock-shackle {
+    position: absolute;
+    top: 20px;
+    /* Adjust based on image gap */
+    width: 75px;
+    height: auto;
+    z-index: 1;
+    /* Behind body */
+    transform-origin: 20% 100%;
+    /* Pivot on left leg approx */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Locked State (Default) */
+.lock-icon-container.locked .lock-shackle {
+    transform: translateY(0) rotate(0deg);
+}
+
+/* Unlocked State */
+.lock-icon-container.unlocked .lock-shackle {
+    transform: translateY(-35px) rotate(-25deg);
+    /* Pop up and rotate */
+    filter: drop-shadow(0 0 15px #fff);
+    /* Glow when open */
+}
+
+/* Shaking Animation */
+.lock-icon-container.shaking {
+    animation: lockShake 0.5s ease;
+}
+
+.center-display .level-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    /* Extra Bold */
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.center-display .level-number {
+    font-size: 8rem;
+    /* Massive */
+    font-weight: 900;
+    /* Ultra Bold */
+    line-height: 0.9;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 50px rgba(140, 198, 63, 0.4);
+}
+
+/* SVG Ring */
+.progress-ring {
+    transform: rotate(0deg);
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+.ring-track {
+    fill: rgba(0, 0, 0, 0.2);
+    stroke: rgba(255, 255, 255, 0.05);
+    /* Subtle dark track */
+    stroke-width: 40;
+    /* Thick & Bold */
+}
+
+.segment-path {
+    fill: none;
+    stroke: var(--accent-neon);
+    stroke-width: 40;
+    /* Thick & Bold */
+    stroke-linecap: butt;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 0.15;
+}
+
+.segment-path.active {
+    opacity: 1;
+    stroke: var(--accent-neon);
+    filter: url(#glow);
+    animation: breatheSegment 4s ease-in-out infinite;
+}
+
+/* Ring Labels - Tighter Positioning (Top Quadrants) */
+.ring-label {
+    position: absolute;
+    font-size: 0.8rem;
+    /* Slightly smaller for space */
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* Performance (Segment 9: Approx 10 o'clock - Left Side) */
+.label-performance {
+    top: 30%;
+    left: -25%;
+    text-align: right;
+    transform: translateX(0);
+}
+
+/* Elite (Segment 10: Approx 11 o'clock - Higher Left) */
+.label-elite {
+    top: 5%;
+    left: -10%;
+    text-align: right;
+    transform: translateX(0);
+}
+
+/* Animations */
+@keyframes scannerRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes breatheSegment {
+
+    0%,
+    100% {
+        stroke-opacity: 1;
+    }
+
+    50% {
+        stroke-opacity: 0.8;
+    }
+}
+
+@keyframes lockShake {
+    0% {
+        transform: scale(1.0) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.0) rotate(-10deg);
+    }
+
+    50% {
+        transform: scale(1.0) rotate(10deg);
+    }
+
+    75% {
+        transform: scale(1.0) rotate(-10deg);
+    }
+
+    100% {
+        transform: scale(1.0) rotate(0deg);
+    }
+}
+
+@keyframes lockOpen {
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+        filter: drop-shadow(0 0 30px #fff);
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .circular-unlock-system.segmented-style {
+        width: 300px;
+        height: 300px;
+        margin: 40px auto;
+    }
+
+    .center-display .level-number {
+        font-size: 5rem;
+    }
+}

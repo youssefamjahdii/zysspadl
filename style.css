@@ -106,6 +106,7 @@ h2 {
 .text-gradient {
     /* Updated for Light Mode: Dark Navy to Neon Green */
     background: linear-gradient(120deg, var(--text-white), var(--accent-neon));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -349,7 +350,7 @@ header nav ul li a:hover {
     justify-content: flex-start;
     position: relative;
     overflow: hidden;
-    padding-bottom: 120px;
+    padding-bottom: 20px;
     padding-left: 60px;
 }
 
@@ -758,15 +759,209 @@ header nav ul li a:hover {
 }
 
 /* Footer */
+/* Footer */
+/* "Padel Court" Footer Theme */
 footer {
-    padding: 100px 0 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    padding: 40px 0 10px;
+    background-color: #0c1a2e;
+    /* Deep Court Navy */
+    /* CSS Padel Court Lines */
+    background-image:
+        /* Center Service Line (Vertical) */
+        linear-gradient(90deg, transparent 49.8%, rgba(255, 255, 255, 0.15) 50%, transparent 50.2%),
+        /* Service Line (Horizontal) */
+        linear-gradient(transparent 65%, rgba(255, 255, 255, 0.15) 65.2%, transparent 65.4%),
+        /* Subtle Grid/Mesh Pattern */
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    background-position: center top;
+    overflow: hidden;
+    border-top: 4px solid var(--accent-neon);
+    /* The "Net" or top boundary */
 }
 
 .footer-content {
+    position: relative;
+    z-index: 2;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.5fr 2fr 1fr;
     gap: 60px;
+    align-items: start;
+}
+
+/* Remove Watermark */
+.footer-watermark {
+    display: none;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 20px;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+}
+
+/* Typography - High Contrast for Dark Court */
+.brand-col p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    max-width: 300px;
+}
+
+/* Nav Grid */
+.footer-nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 40px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 40px;
+}
+
+.footer-link-large {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    /* Pure White */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover: Neon "In" call */
+.footer-link-large:hover {
+    color: var(--accent-neon);
+    transform: translateX(10px);
+    text-shadow: 0 0 10px rgba(140, 198, 63, 0.6);
+}
+
+.footer-link-large:hover::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-neon);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 10px var(--accent-neon);
+}
+
+/* Social Col */
+.social-col h4 {
+    color: var(--accent-neon);
+    margin-bottom: 25px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.social-col a {
+    color: #ffffff;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+    opacity: 0.8;
+}
+
+.social-col a:hover {
+    color: var(--accent-neon);
+    opacity: 1;
+}
+
+/* Magnetic Ball - Adjusted for Dark Bg */
+.magnetic-ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 30% 30%, #f4ff5f, #c2e812);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.08s linear;
+    box-shadow: 0 0 25px rgba(194, 232, 18, 0.6);
+    mix-blend-mode: normal;
+    /* Pop out */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.5;
+    font-size: 0.85rem;
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-nav-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .footer-link-large:hover::before {
+        display: none;
+    }
+}
+
+.bouncing-ball::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url('images/logo.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f4ff5f;
+    box-shadow: inset -5px -5px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(194, 232, 18, 0.4);
+    /* Rotate logo slightly */
+    transform: rotate(-15deg);
+}
+
+@keyframes bounceRealistic {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    50% {
+        transform: translateY(-60px);
+        animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+    }
 }
 
 /* Animation Utilities */
@@ -1544,4 +1739,301 @@ footer {
     }
 }
 
+/* =========================================
+   Advanced Page: Visual Engine & Split Layout (Luxury Redesign)
+   ========================================= */
+
+/* Use Deep Court Navy Background for contrast */
+.section.advanced {
+    position: relative;
+    background-color: #0c1a2e;
+    min-height: 100vh;
+}
+
+.advanced-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    min-height: 600px;
+}
+
+/* Left Column: Info Cards */
+.track-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.track-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    opacity: 0.5;
+    /* Dimmed by default */
+    transform: translateX(-20px);
+}
+
+.track-card.active {
+    opacity: 1;
+    transform: translateX(0);
+    border-color: var(--accent-neon);
+    box-shadow: 0 0 30px rgba(140, 198, 63, 0.1);
+    background: linear-gradient(90deg, rgba(140, 198, 63, 0.05), transparent);
+}
+
+.track-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.node-indicator {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--accent-neon);
+    border: 1px solid var(--accent-neon);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.track-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.track-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Right Column: Visual Engine */
+.visual-engine-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Segmented Ring Styling */
+.circular-unlock-system.segmented-style {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+/* Scanner Overlay (The "Infinite Boucle") */
+.circular-unlock-system.segmented-style::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 280deg,
+            rgba(140, 198, 63, 0.1) 320deg,
+            rgba(140, 198, 63, 0.0) 360deg);
+    border-radius: 50%;
+    animation: scannerRotate 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Center Display */
+.center-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-display .trophy-icon {
+    margin-bottom: 5px;
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(140, 198, 63, 0.8));
+    transform: scale(1.2);
+    font-size: 3rem;
+    /* Ensure icon size */
+}
+
+.center-display .level-label {
+    font-size: 0.9rem;
+    font-weight: 800;
+    /* Extra Bold */
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.center-display .level-number {
+    font-size: 8rem;
+    /* Massive */
+    font-weight: 900;
+    /* Ultra Bold */
+    line-height: 0.9;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    text-shadow: 0 0 50px rgba(140, 198, 63, 0.4);
+}
+
+/* SVG Ring */
+.progress-ring {
+    transform: rotate(0deg);
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+.ring-track {
+    fill: rgba(0, 0, 0, 0.2);
+    stroke: rgba(255, 255, 255, 0.05);
+    /* Subtle dark track */
+    stroke-width: 40;
+    /* Thick & Bold */
+}
+
+.segment-path {
+    fill: none;
+    stroke: var(--accent-neon);
+    stroke-width: 40;
+    /* Thick & Bold */
+    stroke-linecap: butt;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    opacity: 0.15;
+}
+
+.segment-path.active {
+    opacity: 1;
+    stroke: var(--accent-neon);
+    filter: url(#glow);
+    animation: breatheSegment 4s ease-in-out infinite;
+}
+
+/* Ring Labels - Updated Positions (Top Quadrants) */
+.ring-label {
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: 900;
+    /* Ultra Bold */
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+/* Performance (Top Left) */
+.label-performance {
+    top: 15%;
+    left: -5%;
+    transform: rotate(-15deg);
+    text-align: right;
+}
+
+/* Elite (Top Right) */
+.label-elite {
+    top: 15%;
+    right: -5%;
+    transform: rotate(15deg);
+    text-align: left;
+}
+
+@keyframes scannerRotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes breatheSegment {
+
+    0%,
+    100% {
+        stroke-opacity: 1;
+    }
+
+    50% {
+        stroke-opacity: 0.8;
+    }
+}
+
+@keyframes lockShake {
+    0% {
+        transform: scale(1.2) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    75% {
+        transform: scale(1.2) rotate(-10deg);
+    }
+
+    100% {
+        transform: scale(1.2) rotate(0deg);
+    }
+}
+
+@keyframes lockOpen {
+    0% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+        filter: drop-shadow(0 0 30px #fff);
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 900px) {
+    .advanced-split-layout {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .circular-unlock-system.segmented-style {
+        width: 300px;
+        height: 300px;
+        margin: 40px auto;
+    }
+
+    .center-display .level-number {
+        font-size: 5rem;
+    }
 }

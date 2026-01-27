@@ -44,92 +44,223 @@
     </header>
 
     <!-- Page Content -->
-    <main style="padding-top: 120px; padding-bottom: 80px;">
-        <section class="section advanced" id="advanced">
-            <div class="container">
-                <div class="section-header reveal-up">
-                    <h2>ZYSS <span class="text-gradient">ADVANCED</span></h2>
-                    <p class="subtitle">Visual Protocol Engine</p>
+    <main style="padding-top: 120px; padding-bottom: 0px;">
+        <!-- 1. HERO SECTION (Title Area) -->
+        <section id="advanced-hero"
+            style="min-height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative;">
+            <div class="section-header reveal-up">
+                <h1 class="large-title" style="font-size: 6rem; margin-bottom: 20px;">ZYSS <span
+                        class="text-gradient">ADVANCED</span></h1>
+                <p class="subtitle" style="font-size: 1.5rem; letter-spacing: 2px;">Visual Protocol Engine</p>
+                <div class="separator"
+                    style="width: 80px; height: 4px; background: var(--accent-neon); margin: 30px auto; border-radius: 2px;">
                 </div>
+                <p style="max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">
+                    Découvrez l'avenir de votre performance. Une analyse biométrique temps réel couplée à un programme
+                    d'élite.
+                </p>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator" style="position: absolute; bottom: 40px; animation: bounce 2s infinite;">
+                <span
+                    style="display: block; width: 30px; height: 50px; border: 2px solid rgba(255,255,255,0.3); border-radius: 15px; position: relative;">
+                    <span
+                        style="display: block; width: 6px; height: 6px; background: var(--accent-neon); border-radius: 50%; position: absolute; top: 10px; left: 50%; transform: translateX(-50%);"></span>
+                </span>
+            </div>
+        </section>
+
+        <!-- 2. CONTENT SECTION (Engine + Monoliths) -->
+        <section id="advanced-content"
+            style="position: relative; min-height: 100vh; background-image: url('images/padel_texture_navy.png'); background-size: 200px; background-repeat: repeat; box-shadow: inset 0 0 100px #050a12;">
+            <!-- Dark Overlay to blend texture -->
+            <div class="texture-overlay"
+                style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(5, 10, 18, 0.85); z-index: 0;">
+            </div>
+
+            <div class="container"
+                style="position: relative; z-index: 1; height: 100vh; display: flex; align-items: center; justify-content: center;">
                 <div class="advanced-split-layout">
-                    <!-- LEFT: Information (The Reading Area) -->
+                    <!-- LEFT: Information (Monoliths) -->
                     <div class="track-info-container">
-                        <!-- Performance Track Card -->
-                        <div class="track-card" id="card-performance">
-                            <div class="card-header">
-                                <span class="node-indicator">09</span>
-                                <h3>PERFORMANCE TRACK</h3>
+                        <!-- Performance Track Card (Monolith Style) -->
+                        <div class="track-card glass-monolith" id="card-performance"
+                            style="background-image: url('images/monolith_performance.png');">
+                            <div class="monolith-overlay">
+                                <div class="card-header">
+                                    <span class="node-indicator">09</span>
+                                    <h3>PERFORMANCE</h3>
+                                </div>
+                                <div class="monolith-content">
+                                    <p>Pour les joueurs visant le top niveau national. Une structure rigoureuse pour
+                                        briser vos plafonds de verre.</p>
+                                    <ul class="requirements-list">
+                                        <li><strong>Top 500</strong> (Hommes)</li>
+                                        <li><strong>Top 300</strong> (Femmes)</li>
+                                        <li><strong>Min 3</strong> ent/semaine</li>
+                                    </ul>
+                                    <a href="#" class="cta-btn small">Postuler</a>
+                                </div>
                             </div>
-                            <p>Pour les joueurs visant le top niveau national. Une structure rigoureuse pour briser vos
-                                plafonds de verre.</p>
-                            <ul class="requirements-list">
-                                <li><strong>Top 500</strong> (Hommes)</li>
-                                <li><strong>Top 300</strong> (Femmes)</li>
-                                <li><strong>Min 3</strong> ent/semaine</li>
-                            </ul>
-                            <a href="#" class="cta-btn small">Postuler</a>
                         </div>
 
-                        <!-- Elite Track Card -->
-                        <div class="track-card" id="card-elite">
-                            <div class="card-header">
-                                <span class="node-indicator">10</span>
-                                <h3>ELITE TRACK</h3>
+                        <!-- Elite Track Card (Monolith Style) -->
+                        <div class="track-card glass-monolith" id="card-elite"
+                            style="background-image: url('images/monolith_elite.png');">
+                            <div class="monolith-overlay">
+                                <div class="card-header">
+                                    <span class="node-indicator">10</span>
+                                    <h3>ELITE TRACK</h3>
+                                </div>
+                                <div class="monolith-content">
+                                    <p>L'accompagnement intégral pour les futurs professionnels. Nutrition, mental,
+                                        technique et stratégie.</p>
+                                    <ul class="program-list">
+                                        <li>Analyse Vidéo IA</li>
+                                        <li>Suivi Macronutriments</li>
+                                        <li>Check-up Ostéo mensuel</li>
+                                    </ul>
+                                    <a href="#" class="cta-btn small">Postuler</a>
+                                </div>
                             </div>
-                            <p>L'accompagnement intégral pour les futurs professionnels. Nutrition, mental, technique et
-                                stratégie.</p>
-                            <ul class="program-list">
-                                <li>Analyse Vidéo IA</li>
-                                <li>Suivi Macronutriments</li>
-                                <li>Check-up Ostéo mensuel</li>
-                            </ul>
-                            <a href="#" class="cta-btn small">Postuler</a>
                         </div>
                     </div>
 
                     <!-- RIGHT: The Visual Engine (Circular System) -->
                     <div class="visual-engine-container reveal-right">
-                        <div class="circular-unlock-system segmented-style">
-                            <!-- Central Content -->
-                            <div class="center-display">
-                                <div class="lock-icon-container">
-                                    <img src="images/lock_shackle.png" class="lock-shackle" alt="Lock Shackle">
-                                    <img src="images/lock_body.png" class="lock-body" alt="Lock Body">
+                        <div class="visual-engine-container reveal-right">
+                            <div class="circular-unlock-system segmented-style">
+                                <!-- Central Content -->
+                                <div class="center-display">
+                                    <div class="lock-icon-container">
+                                        <svg class="lock-svg" viewBox="0 0 120 160" xmlns="http://www.w3.org/2000/svg">
+                                            <defs>
+                                                <linearGradient id="bodyGradientFront" x1="0%" y1="0%" x2="0%"
+                                                    y2="100%">
+                                                    <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#0c1a2e;stop-opacity:1" />
+                                                </linearGradient>
+                                                <linearGradient id="bodyGradientSide" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#10223a;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#08101a;stop-opacity:1" />
+                                                </linearGradient>
+                                                <linearGradient id="bodyGradientTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                    <stop offset="0%" style="stop-color:#2e4f7a;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#1e3a5f;stop-opacity:1" />
+                                                </linearGradient>
+                                                <linearGradient id="shackleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                                    <stop offset="0%" style="stop-color:#888;stop-opacity:1" />
+                                                    <stop offset="20%" style="stop-color:#fff;stop-opacity:1" />
+                                                    <stop offset="50%" style="stop-color:#ccc;stop-opacity:1" />
+                                                    <stop offset="80%" style="stop-color:#fff;stop-opacity:1" />
+                                                    <stop offset="100%" style="stop-color:#888;stop-opacity:1" />
+                                                </linearGradient>
+                                            </defs>
+
+                                            <!-- Shackle Group (Behind Body) -->
+                                            <g class="lock-shackle-group">
+                                                <path d="M35 60 V40" stroke="url(#shackleGradient)" stroke-width="12"
+                                                    stroke-linecap="round" />
+                                                <path d="M85 60 V40" stroke="url(#shackleGradient)" stroke-width="12"
+                                                    stroke-linecap="round" />
+                                                <path d="M35 40 A 25 20 0 0 1 85 40" fill="none"
+                                                    stroke="url(#shackleGradient)" stroke-width="12"
+                                                    stroke-linecap="round" />
+                                            </g>
+
+                                            <!-- Body Group (Isometric Cube) -->
+                                            <g class="lock-body-group" transform="translate(10, 60)">
+                                                <!-- Drop Shadow -->
+                                                <ellipse cx="50" cy="75" rx="40" ry="10" fill="rgba(0,0,0,0.5)"
+                                                    filter="blur(4px)" />
+
+                                                <!-- Side Face -->
+                                                <path d="M90 20 L90 70 L60 85 L60 30 Z" fill="url(#bodyGradientSide)" />
+
+                                                <!-- Front Face -->
+                                                <path d="M0 20 L60 30 L60 85 L0 75 Z" fill="url(#bodyGradientFront)"
+                                                    stroke="var(--accent-neon)" stroke-width="1" />
+
+                                                <!-- Top Face -->
+                                                <path d="M0 20 L30 5 L90 20 L60 30 Z" fill="url(#bodyGradientTop)" />
+
+                                                <!-- Neon Circuit Details -->
+                                                <path d="M10 30 L30 35 L30 60 M50 35 L50 70" fill="none"
+                                                    stroke="var(--accent-neon)" stroke-width="2" stroke-opacity="0.8"
+                                                    opacity="0.8" />
+
+                                                <!-- Keyhole -->
+                                                <g transform="translate(30, 52) skewY(10)">
+                                                    <circle r="8" fill="#000" stroke="var(--accent-neon)"
+                                                        stroke-width="2" />
+                                                    <path d="M-2 2 L-2 8 L2 8 L2 2" fill="var(--accent-neon)" />
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="level-label">LEVEL</div>
+                                    <div class="level-number" id="level-display">00</div>
                                 </div>
-                                <div class="level-label">LEVEL</div>
-                                <div class="level-number" id="level-display">00</div>
+
+                                <!-- Segmented Ring (SVG for precision) -->
+                                <svg class="progress-ring" width="500" height="500" viewBox="0 0 500 500">
+                                    <!-- Definitions for gradients -->
+                                    <!-- Definitions for gradients & filters -->
+                                    <defs>
+                                        <!-- Neon Gradient (Base Glow) -->
+                                        <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color: #4facfe; stop-opacity: 1" />
+                                            <stop offset="100%"
+                                                style="stop-color: var(--accent-neon); stop-opacity: 1" />
+                                        </linearGradient>
+
+                                        <!-- Metallic Groove Gradient (Background Track) -->
+                                        <linearGradient id="grooveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#050a12" />
+                                            <stop offset="50%" stop-color="#14263e" />
+                                            <stop offset="100%" stop-color="#050a12" />
+                                        </linearGradient>
+
+                                        <!-- Glass Highlight (Tube Effect) -->
+                                        <linearGradient id="glassHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="rgba(255,255,255,0.0)" />
+                                            <stop offset="40%" stop-color="rgba(255,255,255,0.6)" />
+                                            <stop offset="60%" stop-color="rgba(255,255,255,0.1)" />
+                                            <stop offset="100%" stop-color="rgba(255,255,255,0.0)" />
+                                        </linearGradient>
+
+                                        <!-- Inner Shadow Filter for Groove -->
+                                        <filter id="innerShadow">
+                                            <feOffset dx="2" dy="4" />
+                                            <feGaussianBlur stdDeviation="3" result="offset-blur" />
+                                            <feComposite operator="out" in="SourceGraphic" in2="offset-blur"
+                                                result="inverse" />
+                                            <feFlood flood-color="black" flood-opacity="0.8" result="color" />
+                                            <feComposite operator="in" in="color" in2="inverse" result="shadow" />
+                                            <feComposite operator="over" in="shadow" in2="SourceGraphic" />
+                                        </filter>
+                                    </defs>
+
+                                    <!-- Background Track (Metallic Groove) -->
+                                    <circle class="ring-track" cx="250" cy="250" r="210" stroke="url(#grooveGradient)"
+                                        stroke-width="50" fill="none" filter="url(#innerShadow)" />
+
+                                    <!-- Segments (Dynamic) -->
+                                    <!-- We will generate these via JS or hardcode them if fixed number -->
+                                    <!-- Using 10 segments to represent the 10 steps -->
+
+                                    <!-- Placeholder (Removed by JS) -->
+                                    <circle class="ring-segment" cx="250" cy="250" r="210" stroke-dasharray="100 900"
+                                        stroke-dashoffset="0" transform="rotate(-90 250 250)" style="opacity:0;" />
+                                </svg>
+
+                                <!-- Overlay Labels (Absolute) -->
+                                <!-- Labels Removed by User Request -->
                             </div>
-
-                            <!-- Segmented Ring (SVG for precision) -->
-                            <svg class="progress-ring" width="400" height="400" viewBox="0 0 400 400">
-                                <!-- Definitions for gradients -->
-                                <defs>
-                                    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                        <stop offset="0%" style="stop-color: #4facfe; stop-opacity: 1" />
-                                        <!-- Blue start -->
-                                        <stop offset="100%" style="stop-color: var(--accent-neon); stop-opacity: 1" />
-                                        <!-- Neon End -->
-                                    </linearGradient>
-                                </defs>
-
-                                <!-- Background Track -->
-                                <circle class="ring-track" cx="200" cy="200" r="160" />
-
-                                <!-- Segments (Dynamic) -->
-                                <!-- We will generate these via JS or hardcode them if fixed number -->
-                                <!-- Using 10 segments to represent the 10 steps -->
-
-                                <!-- Segment 1 -->
-                                <circle class="ring-segment" cx="200" cy="200" r="160" stroke-dasharray="100 900"
-                                    stroke-dashoffset="0" transform="rotate(-90 200 200)" />
-                            </svg>
-
-                            <!-- Overlay Labels (Absolute) -->
-                            <!-- Labels Removed by User Request -->
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
 

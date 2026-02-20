@@ -21,21 +21,21 @@
     <header id="header">
         <div class="logo">
             <!-- Logo Placeholder -->
-            <a href="index.html"><img src="images/logo.png" alt="ZYSS Logo" style="height: 70px;"></a>
+            <a href="index.html"><img src="images/LOGO NAVY.png" alt="ZYSS Logo" style="height: 70px;"></a>
         </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="partenaires-jeu.html">Notre Équipe</a></li>
-                <li><a href="academy.html">Académie</a></li>
-                <li><a href="events.html">Événements</a></li>
+                <li><a href="stage-padel.html">Stages</a></li>
+                <li><a href="events.html">Events</a></li>
                 <li><a href="corporate.html">Corporate</a></li>
-                <li><a href="equipes.html">Équipes</a></li>
-                <li><a href="advanced.html">Programme Avancé</a></li>
-                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="coach-partners.html">Coachs</a></li>
+                <li><a href="activities.html">Activités</a></li>
+                <li><a href="reviews.html">Avis</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <a href="contact.html" class="cta-btn small">contact</a>
+        <a href="contact.html" class="cta-btn small">Contact</a>
         <div class="mobile-toggle">
             <span></span>
             <span></span>
@@ -68,37 +68,50 @@
     <!-- The Matrix (Bento Grid) -->
     <section class="section matrix" id="matrix">
         <div class="container">
+            <!-- Custom Grid Style for Desktop packing -->
+            <style>
+                @media (min-width: 1024px) {
+                    .grid-matrix {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr) !important;
+                        grid-auto-rows: 250px;
+                        gap: 24px;
+                    }
+                }
+            </style>
+
             <div class="grid-matrix">
-                <!-- 1. Académie (2x2) -->
-                <a href="academy.html" class="matrix-card col-span-2 row-span-2 reveal-up">
-                    <div class="matrix-img" style="background-image: url('images/matrix_academy.png');">
+                <!-- 1. Stage Padel (Priority - Large 2x2) -->
+                <a href="stage-padel.html" class="matrix-card col-span-2 row-span-2 reveal-up">
+                    <div class="matrix-img" style="background-image: url('images/matrix_advanced.png');">
                     </div>
                     <div class="matrix-overlay">
-                        <h3>Académie <span class="arrow">→</span></h3>
-                        <p class="subtitle">Entraînement Holistique</p>
+                        <h3>Stage Padel <span class="arrow">→</span></h3>
+                        <p class="subtitle">Immersion Sportive au Soleil</p>
                     </div>
                 </a>
 
-                <!-- 2. Notre Équipe -->
-                <a href="partenaires-jeu.html" class="matrix-card reveal-up delay-1">
+                <!-- 2. Coachs (Tall 1x2 - Positions right of Stage) -->
+                <a href="coach-partners.html" class="matrix-card row-span-2 reveal-up delay-1">
                     <div class="matrix-img" style="background-image: url('images/matrix_partenaires_jeux.png');">
                     </div>
                     <div class="matrix-overlay">
-                        <h3>Notre Équipe <span class="arrow">→</span></h3>
+                        <h3>Coachs <span class="arrow">→</span></h3>
+                        <p class="subtitle">Partenaire de votre Réussite</p>
                     </div>
                 </a>
 
-                <!-- 3. Événements -->
+                <!-- 3. Events (Standard) -->
                 <a href="events.html" class="matrix-card reveal-up delay-2">
                     <div class="matrix-img" style="background-image: url('images/matrix_events.png');">
                     </div>
                     <div class="matrix-overlay">
-                        <h3>Événements <span class="arrow">→</span></h3>
+                        <h3>Events <span class="arrow">→</span></h3>
                     </div>
                 </a>
 
-                <!-- 4. Corporate -->
-                <a href="corporate.html" class="matrix-card reveal-up">
+                <!-- 4. Corporate (Standard) -->
+                <a href="corporate.html" class="matrix-card reveal-up delay-2">
                     <div class="matrix-img" style="background-image: url('images/matrix_corporate.png');">
                     </div>
                     <div class="matrix-overlay">
@@ -106,47 +119,62 @@
                     </div>
                 </a>
 
-                <!-- 5. Équipes -->
-                <a href="equipes.html" class="matrix-card reveal-up delay-1">
-                    <div class="matrix-img" style="background-image: url('images/matrix_equipes.png');">
+                <!-- 5. Activités (Standard) -->
+                <a href="activities.html" class="matrix-card reveal-up delay-1">
+                    <div class="matrix-img" style="background-image: url('images/matrix_academy.png');">
                     </div>
                     <div class="matrix-overlay">
-                        <h3>Équipes <span class="arrow">→</span></h3>
+                        <h3>Activités <span class="arrow">→</span></h3>
+                        <p class="subtitle">Vidéos & Articles</p>
                     </div>
                 </a>
 
-                <!-- 6. Programme Avancé (2 Wide) -->
-                <a href="advanced.html" class="matrix-card col-span-2 reveal-up delay-2">
-                    <div class="matrix-img" style="background-image: url('images/matrix_advanced.png');">
-                    </div>
-                    <div class="matrix-overlay">
-                        <h3>Programme Avancé <span class="arrow">→</span></h3>
-                        <p class="subtitle">Elite Performance Program</p>
-                    </div>
-                </a>
-
-                <!-- 7. Partenaires -->
-                <a href="partenaires.html" class="matrix-card reveal-up">
+                <!-- 6. Avis (Standard) -->
+                <a href="reviews.html" class="matrix-card reveal-up delay-2">
                     <div class="matrix-img" style="background-image: url('images/matrix_partenaires.png');">
                     </div>
                     <div class="matrix-overlay">
-                        <h3>Partenaires <span class="arrow">→</span></h3>
+                        <h3>Avis Clients <span class="arrow">→</span></h3>
                     </div>
                 </a>
 
-                <!-- 8. Contact -->
-                <a href="contact.html" class="matrix-card reveal-up delay-1">
-                    <div class="matrix-img" style="background-image: url('images/contact_padel_court.png');">
-                    </div>
-                    <div class="matrix-overlay">
-                        <h3>Contact <span class="arrow">→</span></h3>
-                    </div>
-                </a>
             </div>
         </div>
     </section>
 
 
+
+    <!-- Footer -->
+    <footer>
+        <div class="magnetic-ball"></div>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/logo.png" alt="ZYSS Padel" class="footer-logo">
+                <p>Elite Sport meets Luxury.</p>
+            </div>
+            <div class="footer-col nav-col">
+                <div class="footer-nav-grid">
+                    <a href="index.html" class="footer-link-large">Accueil</a>
+                    <a href="stage-padel.html" class="footer-link-large">Stages</a>
+                    <a href="events.html" class="footer-link-large">Events</a>
+                    <a href="corporate.html" class="footer-link-large">Corporate</a>
+                    <a href="coach-partners.html" class="footer-link-large">Coachs</a>
+                    <a href="activities.html" class="footer-link-large">Activités</a>
+                    <a href="reviews.html" class="footer-link-large">Avis</a>
+                    <a href="contact.html" class="footer-link-large">Contact</a>
+                </div>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Connect</h4>
+                <a href="#">Instagram</a><br>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 ZYSS Padel. Tous droits réservés.</p>
+            <p>Paris • Agadir</p>
+        </div>
+    </footer>
 
     <div class="custom-cursor"></div>
     <script src="script.js"></script>

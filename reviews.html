@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYSS | Avis Clients</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-neon);
+        }
+
+        .stars {
+            color: var(--accent-neon);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="ZYSS Logo" style="height: 70px;"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="stage-padel.html">Stages</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="corporate.html">Corporate</a></li>
+                <li><a href="coach-partners.html">Coachs</a></li>
+                <li><a href="activities.html">Activités</a></li>
+                <li><a href="reviews.html" class="active">Avis</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="cta-btn small">Contact</a>
+        <div class="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <main style="padding-top: 150px; padding-bottom: 80px;">
+
+        <section class="section" style="text-align: center; margin-bottom: 60px;">
+            <h1 class="reveal-up large-title">ILS NOUS FONT <span class="accent">CONFIANCE</span></h1>
+            <p class="lead reveal-up delay-1"
+                style="max-width: 800px; margin: 30px auto; font-size: 1.1rem; opacity: 0.9;">
+                Retours d'expérience de nos joueurs, partenaires et entreprises.
+            </p>
+            <div class="reveal-up delay-2">
+                <span style="font-size: 2rem; font-weight: 700;">4.9/5</span>
+                <div class="stars" style="display: inline-block; margin-left: 10px;">★★★★★</div>
+                <p style="font-size: 0.9rem; opacity: 0.7;">Basé sur 150+ avis</p>
+            </div>
+        </section>
+
+        <!-- Reviews Grid -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-matrix"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+
+                    <!-- Review 1 -->
+                    <div class="review-card reveal-up">
+                        <div class="stars">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"Une organisation millimétrée
+                            pour notre séminaire d'entreprise. L'équipe ZYSS a su créer une ambiance incroyable. À
+                            refaire !"</p>
+                        <div style="display: flex; align-items: center;">
+                            <div
+                                style="width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 15px;">
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem;">Thomas D.</h4>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">Directeur Marketing, TechCorp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card reveal-up delay-1">
+                        <div class="stars">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"Le stage à Agadir était
+                            exceptionnel. Les coachs sont top niveau et l'ambiance du groupe était géniale. J'ai
+                            vraiment progressé."</p>
+                        <div style="display: flex; align-items: center;">
+                            <div
+                                style="width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 15px;">
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem;">Sophie L.</h4>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">Joueuse Intermédiaire</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card reveal-up delay-2">
+                        <div class="stars">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"En tant que coach partenaire,
+                            je me sens vraiment soutenu. ZYSS m'apporte des opportunités que je n'aurais pas eues seul."
+                        </p>
+                        <div style="display: flex; align-items: center;">
+                            <div
+                                style="width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 15px;">
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem;">Marc R.</h4>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">Coach Padel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 4 -->
+                    <div class="review-card reveal-up">
+                        <div class="stars">★★★★★</div>
+                        <p style="font-style: italic; margin-bottom: 20px; opacity: 0.9;">"Le tournoi P500 organisé par
+                            ZYSS était au-delà de mes attentes. Superbe ambiance, super niveau."</p>
+                        <div style="display: flex; align-items: center;">
+                            <div
+                                style="width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 15px;">
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1rem;">Julien P.</h4>
+                                <span style="font-size: 0.8rem; opacity: 0.7;">Joueur Compétition</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 60px;">
+                    <h3 style="margin-bottom: 20px;">Votre avis compte</h3>
+                    <a href="contact.html" class="cta-btn small">Laisser un avis</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="magnetic-ball"></div>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/logo.png" alt="ZYSS Padel" class="footer-logo">
+                <p>Elite Sport meets Luxury.</p>
+            </div>
+            <div class="footer-col nav-col">
+                <div class="footer-nav-grid">
+                    <a href="index.html" class="footer-link-large">Accueil</a>
+                    <a href="stage-padel.html" class="footer-link-large">Stages</a>
+                    <a href="events.html" class="footer-link-large">Events</a>
+                    <a href="corporate.html" class="footer-link-large">Corporate</a>
+                    <a href="coach-partners.html" class="footer-link-large">Coachs</a>
+                    <a href="activities.html" class="footer-link-large">Activités</a>
+                    <a href="reviews.html" class="footer-link-large">Avis</a>
+                    <a href="contact.html" class="footer-link-large">Contact</a>
+                </div>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Connect</h4>
+                <a href="#">Instagram</a><br>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 ZYSS Padel. Tous droits réservés.</p>
+            <p>Paris • Agadir</p>
+        </div>
+    </footer>
+
+    <div class="custom-cursor"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

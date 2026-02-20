@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 
 <head>
@@ -33,16 +33,142 @@
         </nav>
         <a href="contact.html" class="cta-btn small active">Contact</a>
     </header>
-    <main
-        style="padding-top: 150px; padding-bottom: 80px; min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
-        <h1 class="reveal-up">NOUS <span class="accent">CONTACTER</span></h1>
-        <p class="subtitle reveal-up delay-1">Réservations & Informations.</p>
+    <main style="padding-top: 150px; padding-bottom: 100px; min-height: 80vh;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h1 class="reveal-up large-title" style="color: #051024;">NOUS <span class="accent">CONTACTER</span>
+                </h1>
+                <p class="subtitle reveal-up delay-1"
+                    style="max-width: 600px; margin: 20px auto 0; line-height: 1.6; color: rgba(5,16,36,0.7);">
+                    L'équipe ZYSS est à votre entière disposition pour vos réservations, vos projets d'entreprise ou
+                    toute demande d'information.
+                </p>
+            </div>
 
-        <div class="glass-card reveal-up delay-2"
-            style="margin-top: 40px; padding: 40px; max-width: 500px; width: 100%;">
-            <p style="margin-bottom: 20px;">contact@zysspadel.com</p>
-            <p style="margin-bottom: 20px;">+33 1 23 45 67 89</p>
-            <p>Paris & Agadir</p>
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: start;">
+                <!-- Contact Info Section (Now in a clean box) -->
+                <div class="glass-card reveal-up delay-2"
+                    style="display: flex; flex-direction: column; gap: 40px; padding: 50px; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(5, 16, 36, 0.08); box-shadow: 0 10px 40px rgba(5, 16, 36, 0.05); border-radius: 12px;">
+                    <div>
+                        <h3
+                            style="font-size: 1.8rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; color: #051024;">
+                            Entrons en <span class="accent">contact</span></h3>
+                        <p style="color: rgba(5, 16, 36, 0.8); line-height: 1.6;">N'hésitez pas à nous écrire
+                            directement ou à utiliser
+                            notre formulaire. Nous vous répondrons dans les plus brefs délais.</p>
+                    </div>
+
+                    <div
+                        style="display: flex; flex-direction: column; gap: 30px; border-top: 1px solid rgba(5, 16, 36, 0.1); padding-top: 30px;">
+                        <div>
+                            <span
+                                style="display: block; color: var(--accent-neon); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">Email
+                                Officiel</span>
+                            <a href="mailto:contact@zysspadel.com"
+                                style="color: #051024; font-size: 1.2rem; text-decoration: none; font-weight: 600; transition: color 0.3s;"
+                                onmouseover="this.style.color='var(--accent-neon)'"
+                                onmouseout="this.style.color='#051024'">contact@zysspadel.com</a>
+                        </div>
+
+                        <div>
+                            <span
+                                style="display: block; color: var(--accent-neon); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">Téléphone
+                                & WhatsApp</span>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <a href="tel:+14845077547"
+                                    style="color: #051024; font-size: 1.2rem; text-decoration: none; font-weight: 600; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--accent-neon)'"
+                                    onmouseout="this.style.color='#051024'">+1 (484) 507-7547 <span
+                                        style="font-size: 0.85rem; color: rgba(5, 16, 36, 0.5); font-weight: 500;">(International)</span></a>
+                                <a href="https://wa.me/33749788035"
+                                    style="color: #051024; font-size: 1.2rem; text-decoration: none; font-weight: 600; transition: color 0.3s;"
+                                    onmouseover="this.style.color='var(--accent-neon)'"
+                                    onmouseout="this.style.color='#051024'">+33 7 49 78 80 35 <span
+                                        style="font-size: 0.85rem; color: rgba(5, 16, 36, 0.5); font-weight: 500;">(France)</span></a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span
+                                style="display: block; color: var(--accent-neon); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 5px;">Nos
+                                Localisations</span>
+                            <p style="color: #051024; font-size: 1.2rem; font-weight: 600; margin: 0;">Paris (Padel 15)
+                                & Agadir</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Section -->
+                <div class="glass-card reveal-up delay-2"
+                    style="padding: 50px; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(5, 16, 36, 0.08); box-shadow: 0 10px 40px rgba(5, 16, 36, 0.05); border-radius: 12px;">
+                    <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 25px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <label for="firstName"
+                                    style="display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(5, 16, 36, 0.7);">Prénom
+                                    *</label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    style="width: 100%; padding: 15px 20px; background: #f8f9fa; border: 1px solid rgba(5, 16, 36, 0.1); border-radius: 6px; color: #051024; font-family: 'Montserrat', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s;"
+                                    onfocus="this.style.borderColor='var(--accent-neon)'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 63, 0.2)';"
+                                    onblur="this.style.borderColor='rgba(5, 16, 36, 0.1)'; this.style.boxShadow='none';">
+                            </div>
+                            <div>
+                                <label for="lastName"
+                                    style="display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(5, 16, 36, 0.7);">Nom
+                                    *</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    style="width: 100%; padding: 15px 20px; background: #f8f9fa; border: 1px solid rgba(5, 16, 36, 0.1); border-radius: 6px; color: #051024; font-family: 'Montserrat', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s;"
+                                    onfocus="this.style.borderColor='var(--accent-neon)'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 63, 0.2)';"
+                                    onblur="this.style.borderColor='rgba(5, 16, 36, 0.1)'; this.style.boxShadow='none';">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email"
+                                style="display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(5, 16, 36, 0.7);">Email
+                                *</label>
+                            <input type="email" id="email" name="email" required
+                                style="width: 100%; padding: 15px 20px; background: #f8f9fa; border: 1px solid rgba(5, 16, 36, 0.1); border-radius: 6px; color: #051024; font-family: 'Montserrat', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s;"
+                                onfocus="this.style.borderColor='var(--accent-neon)'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 63, 0.2)';"
+                                onblur="this.style.borderColor='rgba(5, 16, 36, 0.1)'; this.style.boxShadow='none';">
+                        </div>
+
+                        <div>
+                            <label for="subject"
+                                style="display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(5, 16, 36, 0.7);">Type
+                                de demande</label>
+                            <div style="position: relative;">
+                                <select id="subject" name="subject"
+                                    style="width: 100%; padding: 15px 20px; background: #f8f9fa; border: 1px solid rgba(5, 16, 36, 0.1); border-radius: 6px; color: #051024; font-family: 'Montserrat', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s; appearance: none; cursor: pointer;"
+                                    onfocus="this.style.borderColor='var(--accent-neon)'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 63, 0.2)';"
+                                    onblur="this.style.borderColor='rgba(5, 16, 36, 0.1)'; this.style.boxShadow='none';">
+                                    <option value="" disabled selected>Sélectionnez un sujet</option>
+                                    <option value="stages" style="color: #000;">Stages & Immersion Padel</option>
+                                    <option value="corporate" style="color: #000;">Événement Corporate</option>
+                                    <option value="coaching" style="color: #000;">Coaching Privé</option>
+                                    <option value="sponsorship" style="color: #000;">Sponsoring & Partenariat</option>
+                                    <option value="other" style="color: #000;">Autre demande</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                style="display: block; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(5, 16, 36, 0.7);">Message
+                                *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                style="width: 100%; padding: 15px 20px; background: #f8f9fa; border: 1px solid rgba(5, 16, 36, 0.1); border-radius: 6px; color: #051024; font-family: 'Montserrat', sans-serif; font-size: 1rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s; resize: vertical;"
+                                onfocus="this.style.borderColor='var(--accent-neon)'; this.style.boxShadow='0 0 0 3px rgba(140, 198, 63, 0.2)';"
+                                onblur="this.style.borderColor='rgba(5, 16, 36, 0.1)'; this.style.boxShadow='none';"></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-btn"
+                            style="width: 100%; margin-top: 15px; border: none; cursor: pointer; padding: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; background: #051024; color: #f8f9fa; border-radius: 6px; font-weight: 700;">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <!-- Footer: Padel Court Theme -->
@@ -73,8 +199,8 @@
             <!-- Social / Info -->
             <div class="footer-col social-col">
                 <h4>Connect</h4>
-                <a href="#">Instagram</a><br>
-                <a href="#">LinkedIn</a>
+                <a href="https://www.instagram.com/zysspadelcircle/" target="_blank">Instagram</a><br>
+                <a href="https://www.tiktok.com/@zysspadelcircle" target="_blank">TikTok</a>
             </div>
         </div>
 

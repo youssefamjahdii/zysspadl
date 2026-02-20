@@ -1631,15 +1631,23 @@ footer {
 
 /* Background Images (Updated to Light/Neon Vibe) */
 #panel-teambuilding {
-    background-image: url('images/monolith_teambuilding_light.png');
+    background-image: url('images/monolith_teambuilding_2.png');
 }
 
 #panel-tournament {
-    background-image: url('images/monolith_tournament_light.png');
+    background-image: url('images/monolith_tournament_2.png');
 }
 
 #panel-custom {
-    background-image: url('images/monolith_custom_light.png');
+    background-image: url('images/monolith_vip.png');
+}
+
+#panel-seminar {
+    background-image: url('images/monolith_seminar.png');
+}
+
+#panel-networking {
+    background-image: url('images/monolith_networking.png');
 }
 
 /* Dark Gradient Overlay for Readability */

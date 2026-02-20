@@ -147,117 +147,136 @@ document.addEventListener('DOMContentLoaded', () => {
         animateRacket();
     }
 
-    // --- Particle Effect (Antigravity Overhaul - High Inertia Swarm) ---
+    // --- Particle Effect (Antigravity Network Nodes) ---
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particles = [];
-        const particleCount = 800; // Denser stardust
-        let mouse = { x: -1000, y: -1000, active: false };
+        const particleCount = 100; // Network nodes
+        const connectionDistance = 150;
+        const mouseDistance = 200;
+
+        let mouse = { x: null, y: null, active: false };
 
         // Navy color for dots
-        const dotColor = '#051024';
+        const dotColor = 'rgba(5, 16, 36, 0.7)';
 
         function resize() {
             const rect = canvas.parentElement.getBoundingClientRect();
             canvas.width = rect.width;
             canvas.height = rect.height;
+            init(); // Reinitialize particles on resize to spread them out
         }
 
         window.addEventListener('resize', resize);
-        resize();
 
         class Particle {
             constructor() {
-                this.init();
-            }
-
-            init() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 1.0;
-                this.vy = (Math.random() - 0.5) * 1.0;
-                this.size = Math.random() * 1.5 + 0.5;
-                this.baseAlpha = Math.random() * 0.5 + 0.3;
-                this.alpha = this.baseAlpha;
-
-                // Acceleration factors for inertia
-                this.ax = 0;
-                this.ay = 0;
-                this.friction = 0.96; // High inertia coefficient
+                this.vx = (Math.random() - 0.5) * 1.5; // Slow drift
+                this.vy = (Math.random() - 0.5) * 1.5;
+                this.size = Math.random() * 2 + 1;
             }
 
             update() {
-                if (mouse.active) {
-                    const dx = mouse.x - this.x;
-                    const dy = mouse.y - this.y;
-                    const distSq = dx * dx + dy * dy;
-                    const dist = Math.sqrt(distSq);
-
-                    if (dist < 800) {
-                        const force = (800 - dist) / 800;
-
-                        // Gravitational attraction with a 'whip' delay
-                        // Acceleration based on distance
-                        this.ax = (dx / dist) * force * 0.6;
-                        this.ay = (dy / dist) * force * 0.6;
-
-                        // Add swarming/orbital drift
-                        this.vx += this.ax + (Math.random() - 0.5) * 0.1;
-                        this.vy += this.ay + (Math.random() - 0.5) * 0.1;
-                    }
-                }
-
-                // Apply physics: Velocity + Acceleration + Friction
-                this.vx *= this.friction;
-                this.vy *= this.friction;
-
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Seamless Screen Wrap
-                if (this.x < 0) this.x = canvas.width;
-                if (this.x > canvas.width) this.x = 0;
-                if (this.y < 0) this.y = canvas.height;
-                if (this.y > canvas.height) this.y = 0;
+                // Bounce off edges
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
 
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fillStyle = dotColor;
-                ctx.globalAlpha = this.alpha;
+                ctx.globalAlpha = 1.0;
                 ctx.fill();
             }
         }
 
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
+        function init() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
         }
+
+        // Initial setup
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        init();
 
         const heroSection = document.getElementById('agadir-hero');
         if (heroSection) {
             heroSection.addEventListener('mousemove', (e) => {
-                const rect = canvas.getBoundingClientRect();
-                mouse.x = e.clientX - rect.left;
-                mouse.y = e.clientY - rect.top;
+                const bRect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - bRect.left;
+                mouse.y = e.clientY - bRect.top;
                 mouse.active = true;
             });
             heroSection.addEventListener('mouseleave', () => {
                 mouse.active = false;
+                mouse.x = null;
+                mouse.y = null;
             });
         }
 
         function animate() {
-            // Light trailing for white background
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.12)';
-            ctx.globalAlpha = 1;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            // Clear background cleanly instead of trailing to eliminate 'box' effect
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            // Update and draw particles
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Connect to other particles
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distSq = dx * dx + dy * dy;
+
+                    if (distSq < connectionDistance * connectionDistance) {
+                        const dist = Math.sqrt(distSq);
+                        const alpha = 1 - (dist / connectionDistance);
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(5, 16, 36, ${alpha * 0.4})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                // Connect to mouse
+                if (mouse.active && mouse.x !== null) {
+                    const dx = particles[i].x - mouse.x;
+                    const dy = particles[i].y - mouse.y;
+                    const distSq = dx * dx + dy * dy;
+
+                    if (distSq < mouseDistance * mouseDistance) {
+                        const dist = Math.sqrt(distSq);
+                        const alpha = 1 - (dist / mouseDistance);
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(140, 198, 63, ${alpha * 0.8})`; // Neon green accent
+                        ctx.lineWidth = 1.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+
+                        // Gentle attraction to mouse
+                        const forceDirectionX = dx / dist;
+                        const forceDirectionY = dy / dist;
+                        const force = (mouseDistance - dist) / mouseDistance;
+                        particles[i].x -= forceDirectionX * force * 1.5;
+                        particles[i].y -= forceDirectionY * force * 1.5;
+                    }
+                }
+            }
             requestAnimationFrame(animate);
         }
         animate();
@@ -301,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
         animateCursor();
 
         // Hover Effect Logic
-        const hoverTags = 'a, button, .matrix-card, .cta-btn, .glass-card, .partner-logo';
+        const hoverTags = 'a, button, .matrix-card, .cta-btn, .partner-logo';
         document.addEventListener('mouseover', (e) => {
             if (e.target.closest(hoverTags)) {
                 cursor.classList.add('hovered');

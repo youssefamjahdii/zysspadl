@@ -90,10 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // --- Events Racket Advanced Logic (Float & Hold & Glow) ---
     const eventsRacket = document.getElementById('eventsRacket');
-    const heroTextContainer = document.querySelector('.events-hero-text-container'); // Need to ensure this class exists or use existing
-    // Actually let's look for the text container in events.html. It's .glass-hero-text inside .section-header.
-    // Better selector:
-    const eventsText = document.querySelector('.events-page .glass-hero-text') || document.querySelector('.section-header .glass-hero-text');
 
     if (eventsRacket) {
         let currentX = 0;
@@ -114,9 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
             targetX = xRatio * (innerWidth * 0.4);
 
             // Map Y: +/- 30vh (constrained to hero roughly)
-            // Center of screen is 0. 
             const yRatio = (clientY / innerHeight - 0.5) * 2;
-            targetY = yRatio * (innerHeight * 0.3); // +/- 30% of viewport height
+            targetY = yRatio * (innerHeight * 0.3);
         });
 
         // Interaction States
@@ -135,19 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
             time += 0.03; // Float speed
 
             if (isHovering) {
-                // "Holding" state: Smoothly follow mouse
                 currentX += (targetX - currentX) * 0.1;
                 currentY += (targetY - currentY) * 0.1;
             } else {
-                // "Floating" state: Sticky position + float
-                const floatOffset = Math.sin(time) * 15;
-                // We apply float on top of the LAST position (currentY should be stable base)
-                // Actually to make it "stick", currentY remains as the base. 
-                // We calculate a RENDER Y which includes float.
-                // But if we modify currentY, it drifts. 
-                // Alternative: TargetY stays at last known input. CurrentY lerps to TargetY + Float.
-                // If not hovering, TargetY is constant (last mouse pos).
-
                 const floatY = Math.sin(time) * 10;
                 currentY += ((targetY + floatY) - currentY) * 0.05;
             }
@@ -160,6 +145,122 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         animateRacket();
+    }
+
+    // --- Particle Effect (Antigravity Overhaul - High Inertia Swarm) ---
+    const canvas = document.getElementById('particle-canvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 800; // Denser stardust
+        let mouse = { x: -1000, y: -1000, active: false };
+
+        // Navy color for dots
+        const dotColor = '#051024';
+
+        function resize() {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 1.0;
+                this.vy = (Math.random() - 0.5) * 1.0;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.baseAlpha = Math.random() * 0.5 + 0.3;
+                this.alpha = this.baseAlpha;
+
+                // Acceleration factors for inertia
+                this.ax = 0;
+                this.ay = 0;
+                this.friction = 0.96; // High inertia coefficient
+            }
+
+            update() {
+                if (mouse.active) {
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distSq = dx * dx + dy * dy;
+                    const dist = Math.sqrt(distSq);
+
+                    if (dist < 800) {
+                        const force = (800 - dist) / 800;
+
+                        // Gravitational attraction with a 'whip' delay
+                        // Acceleration based on distance
+                        this.ax = (dx / dist) * force * 0.6;
+                        this.ay = (dy / dist) * force * 0.6;
+
+                        // Add swarming/orbital drift
+                        this.vx += this.ax + (Math.random() - 0.5) * 0.1;
+                        this.vy += this.ay + (Math.random() - 0.5) * 0.1;
+                    }
+                }
+
+                // Apply physics: Velocity + Acceleration + Friction
+                this.vx *= this.friction;
+                this.vy *= this.friction;
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Seamless Screen Wrap
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = dotColor;
+                ctx.globalAlpha = this.alpha;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        const heroSection = document.getElementById('agadir-hero');
+        if (heroSection) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+                mouse.active = true;
+            });
+            heroSection.addEventListener('mouseleave', () => {
+                mouse.active = false;
+            });
+        }
+
+        function animate() {
+            // Light trailing for white background
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.12)';
+            ctx.globalAlpha = 1;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
     }
 
     // --- Custom Glow Cursor ---

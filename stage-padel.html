@@ -21,7 +21,7 @@
     <!-- Header -->
     <header id="header">
         <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="ZYSS Logo" style="height: 70px;"></a>
+            <a href="index.html"><img src="images/LOGO NAVY.png" alt="ZYSS Logo" style="height: 70px;"></a>
         </div>
         <nav>
             <ul>
@@ -44,30 +44,89 @@
     </header>
 
     <!-- Page Content -->
-    <main style="padding-top: 150px; padding-bottom: 80px;">
+    <main class="stages-page" style="padding-top: 150px; padding-bottom: 80px; position: relative; overflow: hidden;">
 
         <section class="section" id="agadir-hero"
-            style="text-align: center; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-            <div class="hero-bg-overlay" style="opacity: 0.2; background-image: url('images/matrix_advanced.png');">
-            </div>
+            style="text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; overflow: hidden; background-color: #ffffff;">
 
-            <h1 class="reveal-up large-title">STAGE <span class="accent">AGADIR</span></h1>
-            <p class="subtitle reveal-up delay-1" style="font-size: 1.5rem; margin-top: 20px;">L’immersion sportive au
-                soleil</p>
-            <p class="lead reveal-up delay-2"
-                style="max-width: 700px; margin: 30px auto; font-size: 1.1rem; opacity: 0.9;">
-                Un week-end padel premium. Performance, progression et soleil.<br>
-                <span class="text-highlight">Jeudi soir - Dimanche</span>
-            </p>
+            <!-- Particle Interaction Canvas (Background Layer) -->
+            <canvas id="particle-canvas"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;"></canvas>
+
+            <div class="section-header reveal-up" style="position: relative; z-index: 2;">
+                <h1 class="reveal-up large-title" style="color: #051024;">STAGE <br><span class="accent"
+                        style="color: #051024;">AGADIR</span></h1>
+                <p class="subtitle reveal-up delay-1"
+                    style="font-size: 1.5rem; margin-top: 20px; color: #051024; opacity: 0.8;">L’immersion sportive
+                    au soleil</p>
+                <p class="lead reveal-up delay-2"
+                    style="max-width: 700px; margin: 30px auto; font-size: 1.2rem; opacity: 0.9; color: #051024;">
+                    Un week-end padel premium. Performance, progression et soleil.<br>
+                    <span class="text-highlight" style="color: #051024; font-weight: 700;">Jeudi soir - Dimanche</span>
+                </p>
+                <div class="hero-actions reveal-up delay-3" style="margin-top: 40px;">
+                    <a href="contact.html" class="cta-btn" style="background: #051024; color: #fff;">Réserver mon
+                        stage</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Carousel -->
+        <section class="section" style="padding-bottom: 120px;">
+            <div class="container">
+                <div class="deck-carousel relative-container">
+                    <button class="deck-btn prev-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <div class="deck-track">
+                        <div class="glass-card deck-card">
+                            <img src="images/matrix_advanced.png" alt="Training"
+                                style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                            <div class="icon" style="font-size: 2rem;">🎾</div>
+                            <h3>Training Intensif</h3>
+                            <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                                Sessions coachées par nos experts ZYSS. Travail technique et tactique personnalisé.
+                            </p>
+                        </div>
+                        <div class="glass-card deck-card">
+                            <img src="images/monolith_teambuilding_light.png" alt="Lifestyle"
+                                style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                            <div class="icon" style="font-size: 2rem;">🏨</div>
+                            <h3>Hôtel Premium</h3>
+                            <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                                Détente en bord de mer dans un cadre luxueux. Restauration healthy et festive.
+                            </p>
+                        </div>
+                        <div class="glass-card deck-card">
+                            <img src="images/matrix_partenaires_jeux.png" alt="Matches"
+                                style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                            <div class="icon" style="font-size: 2rem;">🏆</div>
+                            <h3>Matchs & Tournois</h3>
+                            <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">
+                                Mises en pratique, tournois amicaux et défis entre passionnés.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="deck-btn next-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </section>
 
         <section class="section" style="padding-top: 0;">
             <div class="container">
-                <div class="grid-matrix" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="grid-matrix" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
 
                     <!-- Details Card -->
                     <div class="glass-card reveal-up">
-                        <div class="icon" style="font-size: 3rem;">🎾</div>
+                        <img src="images/icon_lightning_neon.svg" alt="Icon" style="height: 50px; margin-bottom: 20px;">
                         <h3>Le Programme</h3>
                         <ul class="features" style="margin-top: 20px; text-align: left;">
                             <li>12 heures de padel</li>
@@ -80,7 +139,7 @@
 
                     <!-- All Inclusive Card -->
                     <div class="glass-card reveal-up delay-1">
-                        <div class="icon" style="font-size: 3rem;">🏨</div>
+                        <img src="images/icon_compass_neon.svg" alt="Icon" style="height: 50px; margin-bottom: 20px;">
                         <h3>All Inclusive</h3>
                         <ul class="features" style="margin-top: 20px; text-align: left;">
                             <li>Hébergement inclus</li>
@@ -93,7 +152,7 @@
                     <!-- Pricing Card -->
                     <div class="glass-card reveal-up delay-2" style="border-color: var(--accent-neon);">
                         <div class="badge">Bestseller</div>
-                        <div class="icon" style="font-size: 3rem;">💎</div>
+                        <img src="images/icon_trophy_neon.svg" alt="Icon" style="height: 50px; margin-bottom: 20px;">
                         <h3>Tarifs</h3>
                         <div style="margin-top: 30px; text-align: left;">
                             <div style="margin-bottom: 20px;">
@@ -108,10 +167,42 @@
                             </div>
                         </div>
                         <div style="margin-top: 30px; text-align: center;">
-                            <a href="tel:+33123456789" class="cta-btn small">Nous Appeler</a>
+                            <a href="contact.html" class="cta-btn small">Réserver mon stage</a>
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Schedule -->
+        <section class="section">
+            <div class="container">
+                <div class="glass-card reveal-up" style="padding: 60px;">
+                    <h2 style="text-align: center; margin-bottom: 50px;">PROGRAMME <span class="accent">DÉTAILLÉ</span>
+                    </h2>
+                    <div class="program-list" style="max-width: 900px; margin: 0 auto; display: grid; gap: 40px;">
+                        <div style="border-left: 3px solid var(--accent-neon); padding-left: 30px;">
+                            <h4 style="color: var(--accent-neon);">JOUR 1 • JEUDI</h4>
+                            <p>Arrivée à l'hôtel, cocktail de bienvenue et présentation du staff. Premier dîner sous les
+                                étoiles.</p>
+                        </div>
+                        <div style="border-left: 3px solid var(--accent-neon); padding-left: 30px;">
+                            <h4 style="color: var(--accent-neon);">JOUR 2 • VENDREDI</h4>
+                            <p>Matinée : 3h de cours techniques. Après-midi : Jeu libre & Analyse vidéo personnalisée.
+                                Soirée détente au club.</p>
+                        </div>
+                        <div style="border-left: 3px solid var(--accent-neon); padding-left: 30px;">
+                            <h4 style="color: var(--accent-neon);">JOUR 3 • SAMEDI</h4>
+                            <p>Matinée : Ateliers tactiques. Après-midi : Tournoi ZYSS Cup & Remise des prix. Soirée de
+                                gala.</p>
+                        </div>
+                        <div style="border-left: 3px solid var(--accent-neon); padding-left: 30px;">
+                            <h4 style="color: var(--accent-neon);">JOUR 4 • DIMANCHE</h4>
+                            <p>Dernier match "Challenge", déjeuner de clôture et transfert pour le départ. Fin de
+                                l'expérience.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

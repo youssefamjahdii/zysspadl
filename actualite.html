@@ -10,6 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hide description on video hover allowing clear view */
+        .media-item:has(video) .matrix-overlay {
+            transition: opacity 0.4s ease;
+        }
+
+        .media-item:has(video):hover .matrix-overlay {
+            opacity: 0 !important;
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -76,6 +87,56 @@
                 <!-- Mixed Media Grid -->
                 <div class="media-grid"
                     style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px;">
+
+                    <!-- CORPORATE: Media -->
+                    <div class="glass-card media-item" data-category="corporate"
+                        style="padding: 0; overflow: hidden; height: 350px; position: relative;">
+                        <img src="images/hoodie.png" alt="Hoodie ZYSS"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Coming Soon Badge -->
+                        <div
+                            style="position: absolute; top: 20px; right: 20px; background: var(--accent-neon); color: var(--bg-dark); padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; z-index: 10; box-shadow: 0 4px 15px rgba(220, 255, 0, 0.3);">
+                            Coming Soon
+                        </div>
+                        <div class="matrix-overlay"
+                            style="justify-content: flex-end; padding: 20px; background: linear-gradient(to top, rgba(5,16,36,1) 0%, rgba(5,16,36,0.85) 55%, transparent 100%);">
+                            <h3 style="color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">Hoodie ZYSS x Supreme
+                                Padel Masters x Menipex
+                            </h3>
+                            <p
+                                style="font-size: 0.95rem; opacity: 1; color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">
+                                Édition super limitée réservée exclusivement à nos partenaires et sponsors officiels.
+                            </p>
+                            <span
+                                style="color: var(--accent-neon); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); margin-top: 5px;">Édition
+                                Exclusive</span>
+                        </div>
+                    </div>
+
+                    <!-- STAGES: Media -->
+                    <!-- New Announcement Card -->
+                    <div class="glass-card media-item" data-category="stages"
+                        style="padding: 0; overflow: hidden; height: 350px; position: relative;">
+                        <img src="images/stage_agadir_may.png" alt="Stage Agadir Mi-Mai"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Coming Soon Badge -->
+                        <div
+                            style="position: absolute; top: 20px; right: 20px; background: var(--accent-neon); color: var(--bg-dark); padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; z-index: 10; box-shadow: 0 4px 15px rgba(220, 255, 0, 0.3);">
+                            Coming Soon
+                        </div>
+                        <div class="matrix-overlay"
+                            style="justify-content: flex-end; padding: 20px; background: linear-gradient(to top, rgba(5,16,36,1) 0%, rgba(5,16,36,0.85) 55%, transparent 100%);">
+                            <h3 style="color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">Stage Immersion Agadir
+                                : Mi-Mai</h3>
+                            <p
+                                style="font-size: 0.95rem; opacity: 1; color: #ffffff; text-shadow: 1px 1px 4px rgba(0,0,0,0.8);">
+                                Réservez vos dates pour notre prochain stage exclusif ZYSS. 12h de padel, hôtel 5
+                                étoiles, spa, et networking. Places limitées.</p>
+                            <a href="stage-padel.html"
+                                style="color: var(--accent-neon); font-size: 0.85rem; font-weight: 800; text-transform: uppercase; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); text-decoration: none; margin-top: 5px;">Découvrir
+                                le programme →</a>
+                        </div>
+                    </div>
 
                     <!-- EVENTS: Media -->
                     <div class="glass-card media-item" data-category="events"

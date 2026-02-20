@@ -29,7 +29,7 @@
                 <li><a href="stage-padel.html">Stages</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="corporate.html">Corporate</a></li>
-                <li><a href="coach-partners.html" class="active">Coachs</a></li>
+                <li><a href="coach-partners.html" class="active">Coaching</a></li>
                 <li><a href="actualite.html">Actualité</a></li>
                 <li><a href="reviews.html">Avis</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -44,65 +44,298 @@
     </header>
 
     <!-- Page Content -->
-    <main style="padding-top: 150px; padding-bottom: 80px;">
+    <main style="padding-top: 0; padding-bottom: 100px; min-height: 80vh;">
 
-        <section class="section" id="coach-hero"
-            style="text-align: center; min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-
-            <h1 class="reveal-up large-title">PARTENAIRE DES <span class="accent">COACHS</span></h1>
-            <p class="subtitle reveal-up delay-1" style="font-size: 1.5rem; margin-top: 20px;">Vous êtes coach ? On vous
-                accompagne.</p>
-            <p class="lead reveal-up delay-2"
-                style="max-width: 800px; margin: 30px auto; font-size: 1.1rem; opacity: 0.9;">
-                ZYSS Padel ne remplace pas le coach.<br>
-                <span class="text-highlight">Nous devenons son partenaire stratégique.</span>
-            </p>
-        </section>
-
-        <section class="section" style="padding-top: 0;">
-            <div class="container">
-                <div class="glass-card reveal-up" style="margin-bottom: 60px; padding: 60px;">
-                    <h2 style="margin-bottom: 20px;">Développez votre activité</h2>
-                    <p style="margin-bottom: 40px; font-size: 1.1rem;">Vous êtes en déplacement et souhaitez
-                        rentabiliser votre présence ? Vous manquez de terrains ou de réseau ?</p>
-
-                    <div class="grid-matrix"
-                        style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-                        <div>
-                            <div class="icon" style="font-size: 2.5rem; margin-bottom: 15px;">ðŸŸï¸</div>
-                            <h4>Terrains Négociés</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Accès privilégié à nos infrastructures
-                                partenaires.</p>
-                        </div>
-                        <div>
-                            <div class="icon" style="font-size: 2.5rem; margin-bottom: 15px;">ðŸ”—</div>
-                            <h4>Mise en Relation</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Connexion avec des joueurs locaux qualifiés.</p>
-                        </div>
-                        <div>
-                            <div class="icon" style="font-size: 2.5rem; margin-bottom: 15px;">ðŸ› ï¸</div>
-                            <h4>Support Orga</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Aide logistique pour vos stages et cours.</p>
-                        </div>
-                        <div>
-                            <div class="icon" style="font-size: 2.5rem; margin-bottom: 15px;">ðŸš€</div>
-                            <h4>Co-Branding</h4>
-                            <p style="font-size: 0.9rem; opacity: 0.8;">Visibilité accrue le temps de la collaboration.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: center;">
-                    <h3 style="margin-bottom: 30px;">Prêt à collaborer ?</h3>
-                    <a href="contact.html" class="cta-btn small">Devenir Partenaire</a>
-                </div>
+        <!-- Full-Bleed Hero Image -->
+        <section
+            style="position: relative; height: 70vh; min-height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center;">
+            <img src="images/coaching_hero.png" alt="ZYSS Coaching"
+                style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <div
+                style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(5,16,36,0.55) 0%, rgba(5,16,36,0.85) 100%);">
+            </div>
+            <div style="position: relative; z-index: 2; padding: 0 20px;">
+                <p class="reveal-up"
+                    style="color: var(--accent-neon); font-size: 0.85rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px;">
+                    ZYSS Padel Circle</p>
+                <h1 class="reveal-up"
+                    style="font-size: clamp(3rem, 7vw, 6rem); font-weight: 900; letter-spacing: 2px; line-height: 1; margin-bottom: 20px; color: #fff;">
+                    COACHING <br><span class="accent">D'ÉLITE</span>
+                </h1>
+                <p class="reveal-up delay-1"
+                    style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 35px; color: rgba(255,255,255,0.85); line-height: 1.6;">
+                    L'expertise d'un réseau d'élite au service de votre développement.
+                </p>
+                <a href="#coaching-content" class="cta-btn reveal-up delay-2"
+                    style="padding: 16px 45px; font-size: 1rem; letter-spacing: 2px;">DÉCOUVRIR →</a>
             </div>
         </section>
 
+        <div id="coaching-content" style="padding-top: 100px;">
+
+            <!-- Story Section: Two Columns -->
+            <section class="container" style="max-width: 1200px; margin: 0 auto 100px; padding: 0 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <!-- Left: Image -->
+                    <div class="reveal-up" style="position: relative;">
+                        <img src="images/coach_network.png" alt="ZYSS Coaching"
+                            style="width: 100%; height: 420px; object-fit: cover; border-radius: 16px;">
+                        <!-- Floating neon badge -->
+                        <div
+                            style="position: absolute; bottom: -20px; right: -20px; background: var(--accent-neon); color: #051024; padding: 20px 25px; border-radius: 12px; font-weight: 900; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 10px 30px rgba(140,198,63,0.4);">
+                            Partenaire<br>Stratégique
+                        </div>
+                    </div>
+                    <!-- Right: Text -->
+                    <div class="reveal-up delay-1">
+                        <p
+                            style="color: var(--accent-neon); font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">
+                            Notre Philosophie</p>
+                        <h2
+                            style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; margin-bottom: 25px; line-height: 1.1;">
+                            Nous ne remplaçons pas le coach.<br>
+                            <span class="accent">Nous l'élevons.</span>
+                        </h2>
+                        <p style="color: #051024; font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px;">
+                            ZYSS Padel propose un partenariat stratégique unique : accès à des infrastructures premium,
+                            un réseau de joueurs qualifiés et un support logistique complet.
+                        </p>
+                        <p style="color: #051024; font-size: 1.05rem; line-height: 1.8; margin-bottom: 40px;">
+                            Vous êtes en déplacement ? Vous manquez de terrains ou de clientèle locale ? ZYSS devient
+                            votre point d'ancrage partout où vous allez.
+                        </p>
+                        <div style="display: flex; gap: 40px;">
+                            <div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 900; color: var(--accent-neon); margin: 0; line-height: 1;">
+                                    2</p>
+                                <p
+                                    style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 5px 0 0; text-transform: uppercase; letter-spacing: 1px;">
+                                    Destinations</p>
+                            </div>
+                            <div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 900; color: var(--accent-neon); margin: 0; line-height: 1;">
+                                    100%</p>
+                                <p
+                                    style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 5px 0 0; text-transform: uppercase; letter-spacing: 1px;">
+                                    Sur-mesure</p>
+                            </div>
+                            <div>
+                                <p
+                                    style="font-size: 2.2rem; font-weight: 900; color: var(--accent-neon); margin: 0; line-height: 1;">
+                                    ★★★★★</p>
+                                <p
+                                    style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin: 5px 0 0; text-transform: uppercase; letter-spacing: 1px;">
+                                    Réseau élite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What we offer: 4 image cards -->
+            <section style="background: rgba(5,16,36,0.4); padding: 100px 20px; margin-bottom: 100px;">
+                <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 60px;">
+                        <p
+                            style="color: var(--accent-neon); font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px;">
+                            Ce que nous offrons</p>
+                        <h2 class="reveal-up"
+                            style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; text-transform: uppercase;">
+                            Votre <span class="accent">Arsenal Complet</span></h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px;">
+                        <!-- Card 1 -->
+                        <div class="reveal-up"
+                            style="border-radius: 14px; overflow: hidden; background: rgba(5,16,36,0.75); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--accent-neon); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.6)';"
+                            onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                            <img src="images/coach_terrains.png" alt="Terrains"
+                                style="width:100%; height:190px; object-fit:cover; display:block;">
+                            <div style="padding: 25px;">
+                                <div style="width: 32px; height: 32px; color: var(--accent-neon); margin-bottom: 14px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                                        <line x1="12" y1="3" x2="12" y2="21"></line>
+                                    </svg></div>
+                                <h3
+                                    style="font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                                    Terrains Réservés</h3>
+                                <p
+                                    style="color: rgba(255,255,255,0.7); font-size: 0.88rem; line-height: 1.6; margin: 0;">
+                                    Accès prioritaire aux meilleures infrastructures à Paris et Agadir.</p>
+                            </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="reveal-up delay-1"
+                            style="border-radius: 14px; overflow: hidden; background: rgba(5,16,36,0.75); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--accent-neon); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.6)';"
+                            onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                            <img src="images/coach_network.png" alt="Réseau"
+                                style="width:100%; height:190px; object-fit:cover; display:block;">
+                            <div style="padding: 25px;">
+                                <div style="width: 32px; height: 32px; color: var(--accent-neon); margin-bottom: 14px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg></div>
+                                <h3
+                                    style="font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                                    Mise en Relation</h3>
+                                <p
+                                    style="color: rgba(255,255,255,0.7); font-size: 0.88rem; line-height: 1.6; margin: 0;">
+                                    Connexion directe avec notre base de joueurs exigeants et passionnés.</p>
+                            </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="reveal-up delay-2"
+                            style="border-radius: 14px; overflow: hidden; background: rgba(5,16,36,0.75); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--accent-neon); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.6)';"
+                            onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                            <img src="images/coach_orga.png" alt="Logistique"
+                                style="width:100%; height:190px; object-fit:cover; display:block;">
+                            <div style="padding: 25px;">
+                                <div style="width: 32px; height: 32px; color: var(--accent-neon); margin-bottom: 14px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg></div>
+                                <h3
+                                    style="font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                                    Support Logistique</h3>
+                                <p
+                                    style="color: rgba(255,255,255,0.7); font-size: 0.88rem; line-height: 1.6; margin: 0;">
+                                    Déléguez l'organisation entière de vos stages et masterclass.</p>
+                            </div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="reveal-up delay-3"
+                            style="border-radius: 14px; overflow: hidden; background: rgba(5,16,36,0.75); border: 1px solid rgba(255,255,255,0.07); border-top: 3px solid var(--accent-neon); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.6)';"
+                            onmouseout="this.style.transform=''; this.style.boxShadow='';">
+                            <img src="images/coach_branding.png" alt="Branding"
+                                style="width:100%; height:190px; object-fit:cover; display:block;">
+                            <div style="padding: 25px;">
+                                <div style="width: 32px; height: 32px; color: var(--accent-neon); margin-bottom: 14px;">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                        </polygon>
+                                    </svg></div>
+                                <h3
+                                    style="font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                                    Co-Branding ZYSS</h3>
+                                <p
+                                    style="color: rgba(255,255,255,0.7); font-size: 0.88rem; line-height: 1.6; margin: 0;">
+                                    Associez votre image à une marque premium avec visibilité immédiate.</p>
+                            </div>
+                        </div>
+                        <img src="images/coach_terrains.png" alt="Terrains"
+                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                        <div class="icon" style="color: var(--accent-neon); width: 36px; height: 36px;"><svg
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="3" y1="12" x2="21" y2="12"></line>
+                                <line x1="12" y1="3" x2="12" y2="21"></line>
+                            </svg></div>
+                        <h3>Terrains Réservés</h3>
+                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">Accès prioritaire aux
+                            meilleures infrastructures à Paris et Agadir.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="glass-card deck-card reveal-up delay-1"
+                        style="padding: 0; overflow: hidden; border-radius: 14px;">
+                        <img src="images/coach_network.png" alt="Réseau"
+                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                        <div class="icon" style="color: var(--accent-neon); width: 36px; height: 36px;"><svg
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg></div>
+                        <h3>Mise en Relation</h3>
+                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">Connexion directe avec notre
+                            base de joueurs exigeants et passionnés.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="glass-card deck-card reveal-up delay-2"
+                        style="padding: 0; overflow: hidden; border-radius: 14px;">
+                        <img src="images/coach_orga.png" alt="Logistique"
+                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                        <div class="icon" style="color: var(--accent-neon); width: 36px; height: 36px;"><svg
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg></div>
+                        <h3>Support Logistique</h3>
+                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">Déléguez l'organisation
+                            entière de vos stages et masterclass.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="glass-card deck-card reveal-up delay-3"
+                        style="padding: 0; overflow: hidden; border-radius: 14px;">
+                        <img src="images/coach_branding.png" alt="Branding"
+                            style="width:100%; height:200px; object-fit:cover; border-radius:12px; margin-bottom:20px;">
+                        <div class="icon" style="color: var(--accent-neon); width: 36px; height: 36px;"><svg
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                </polygon>
+                            </svg></div>
+                        <h3>Co-Branding ZYSS</h3>
+                        <p style="text-align: left; font-size: 0.95rem; opacity: 0.9;">Associez votre image à une
+                            marque premium avec visibilité immédiate.</p>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
+            <div class="glass-card reveal-up"
+                style="padding: 80px 60px; text-align: center; border-radius: 20px; background: radial-gradient(ellipse at center top, rgba(140,198,63,0.12) 0%, rgba(5,16,36,0.9) 70%); border: 1px solid rgba(140,198,63,0.2); position: relative; overflow: hidden;">
+                <!-- Decorative glow -->
+                <div
+                    style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: var(--accent-neon); filter: blur(100px); opacity: 0.15; pointer-events: none;">
+                </div>
+                <p
+                    style="color: var(--accent-neon); font-size: 0.8rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;">
+                    Rejoindre ZYSS</p>
+                <h2
+                    style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 25px; text-transform: uppercase; font-weight: 900; line-height: 1.1;">
+                    Prêt à hisser votre<br><span class="accent">niveau d'enseignement ?</span>
+                </h2>
+                <p
+                    style="max-width: 550px; margin: 0 auto 45px; color: rgba(255,255,255,0.75); font-size: 1.1rem; line-height: 1.7;">
+                    Rejoignez le réseau élite de coachs ZYSS Padel et concentrez-vous sur ce que vous faites de
+                    mieux : créer des champions.</p>
+                <a href="contact.html" class="cta-btn"
+                    style="padding: 22px 55px; font-size: 1.05rem; letter-spacing: 2px;">POSTULER MAINTENANT →</a>
+            </div>
+        </section>
+
+        </div>
     </main>
 
     <!-- Footer -->
+
     <footer>
         <div class="magnetic-ball"></div>
         <div class="container footer-content">
@@ -116,7 +349,7 @@
                     <a href="stage-padel.html" class="footer-link-large">Stages</a>
                     <a href="events.html" class="footer-link-large">Events</a>
                     <a href="corporate.html" class="footer-link-large">Corporate</a>
-                    <a href="coach-partners.html" class="footer-link-large">Coachs</a>
+                    <a href="coach-partners.html" class="footer-link-large">Coaching</a>
                     <a href="actualite.html" class="footer-link-large">Actualité</a>
                     <a href="reviews.html" class="footer-link-large">Avis</a>
                     <a href="contact.html" class="footer-link-large">Contact</a>

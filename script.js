@@ -481,3 +481,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Legacy Visual Engine logic removed to prevent conflicts with advanced_engine.js
 });
+
+// --- Filter Menu Logic for Actualité Page ---
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const mediaItems = document.querySelectorAll('.media-item');
+
+    if (filterButtons.length > 0 && mediaItems.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button state
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.background = 'rgba(255,255,255,0.05)';
+                    btn.style.color = 'var(--text-white)';
+                    btn.style.border = '1px solid rgba(255,255,255,0.1)';
+                });
+
+                button.classList.add('active');
+                button.style.background = 'var(--accent-neon)';
+                button.style.color = 'var(--bg-dark)';
+                button.style.border = 'none';
+
+                const filterValue = button.getAttribute('data-filter');
+
+                // Filter items
+                mediaItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = ''; // Revert to grid default context
+                        // Simple crossfade
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transition = 'opacity 0.4s ease';
+                        }, 50);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+});

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZYSS | Psychologie du sport & Support Performance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .psych-card {
+            background: rgba(5, 16, 36, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 3px solid var(--accent-neon);
+            border-radius: 14px;
+            padding: 40px;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .psych-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .psych-card h3 {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .psych-card p,
+        .psych-card li {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .psych-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .psych-card li {
+            margin-bottom: 10px;
+        }
+
+        .psych-card li::marker {
+            color: var(--accent-neon);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html"><img src="images/LOGO NAVY.png" alt="ZYSS Logo" style="height: 70px;"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="stage-padel.html">Padel Camps</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="corporate.html">Corporate</a></li>
+                <li><a href="coach-partners.html">Coaching</a></li>
+                <li><a href="psychologie-performance.html" class="active">Performance</a></li>
+                <li><a href="actualite.html">Actualité</a></li>
+                <li><a href="reviews.html">Avis</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="cta-btn small">Contact</a>
+        <div class="mobile-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Page Content Ultra Premium Redesign (LIGHT MODE) -->
+    <main style="padding-top: 0; padding-bottom: 100px; min-height: 80vh; background-color: #ffffff; color: #051024;">
+
+        <!-- Full-Bleed Hero (Cinematic Typography) -->
+        <section
+            style="position: relative; padding: 250px 20px 150px; text-align: center; overflow: hidden; min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+            <!-- Soft Aurora Background -->
+            <div
+                style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 100%; background: radial-gradient(ellipse at top, rgba(140,198,63,0.08) 0%, rgba(255,255,255,0) 70%); z-index: 0;">
+            </div>
+
+            <!-- Massive Background Text -->
+            <div
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; text-align: center; z-index: 1; pointer-events: none; user-select: none;">
+                <h1
+                    style="font-size: clamp(8rem, 20vw, 25rem); font-weight: 900; color: transparent; -webkit-text-stroke: 1px rgba(5,16,36,0.05); text-transform: uppercase; margin: 0; line-height: 0.8; opacity: 0.8;">
+                    PERFORM<br>ANCE
+                </h1>
+            </div>
+
+            <!-- Foreground Content -->
+            <div style="position: relative; z-index: 2; max-width: 1000px; margin: 0 auto;">
+                <p class="reveal-up"
+                    style="color: var(--accent-neon); font-size: 1rem; font-weight: 800; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 25px;">
+                    Partenaire ZYSS Padel
+                </p>
+                <h2 class="reveal-up delay-1"
+                    style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: 1px; line-height: 1.1; margin-bottom: 40px; text-transform: uppercase; color: #051024;">
+                    La méthode<br><span style="color: transparent; -webkit-text-stroke: 1px #051024;">Zineb B.</span>
+                </h2>
+                <p class="reveal-up delay-2"
+                    style="font-size: 1.3rem; max-width: 700px; margin: 0 auto; color: rgba(5,16,36,0.7); line-height: 1.8;">
+                    La performance ne repose pas uniquement sur la technique. Elle repose sur le mental, l'endurance, la
+                    gestion des émotions et l'énergie stratégique.
+                </p>
+                <div class="reveal-up delay-3" style="margin-top: 50px;">
+                    <a href="#methode" class="cta-btn main"
+                        style="padding: 18px 50px; font-size: 1rem; letter-spacing: 2px; background: rgba(5,16,36,0.04); border: 1px solid rgba(5,16,36,0.1); backdrop-filter: blur(10px); color: #051024;">
+                        DÉCOUVRIR ↓
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sticky Narrative Flow (Light Mode) -->
+        <section id="methode" style="position: relative; max-width: 1400px; margin: 0 auto 150px; padding: 0 20px;">
+
+            <div style="display: flex; flex-wrap: wrap; gap: 80px; position: relative;">
+
+                <!-- Left: Sticky Title Block -->
+                <div style="flex: 1; min-width: 400px; position: relative;">
+                    <div style="position: sticky; top: 150px; padding-right: 40px;">
+                        <h2
+                            style="font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 30px; color: #051024;">
+                            L'Expertise<br><span style="color: var(--accent-neon);">360°</span>
+                        </h2>
+                        <p style="color: rgba(5,16,36,0.65); font-size: 1.2rem; line-height: 1.8; max-width: 400px;">
+                            En partenariat avec ZYSS Padel, Zineb met son expertise au service des joueurs souhaitant
+                            structurer leur progression et optimiser leur performance, sur et en dehors du terrain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Scrolling Pillars -->
+                <div
+                    style="flex: 1.5; min-width: 300px; display: flex; flex-direction: column; gap: 15vh; padding-top: 50px; padding-bottom: 50px;">
+
+                    <!-- Pillar 1 -->
+                    <div class="reveal-up" style="position: relative;">
+                        <div
+                            style="font-size: 8rem; font-weight: 900; color: rgba(5,16,36,0.04); position: absolute; top: -60px; left: -20px; line-height: 1;">
+                            01</div>
+                        <h3
+                            style="font-size: 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; position: relative; z-index: 1; color: #051024;">
+                            Approche Ancrée
+                        </h3>
+                        <p
+                            style="color: rgba(5,16,36,0.75); font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; position: relative; z-index: 1;">
+                            Zineb n'accompagne pas seulement des sportifs ââ‚¬â€ elle en est une. Elle pratique
+                            régulièrement
+                            des courses de 10 km, des semi-marathons, marathons et des épreuves d'Ironman en équipe.
+                        </p>
+                        <div style="border-left: 2px solid var(--accent-neon); padding-left: 20px; margin-top: 30px;">
+                            <p
+                                style="color: #051024; font-size: 1.1rem; font-style: italic; font-weight: 600; margin: 0; opacity: 0.9;">
+                                "Elle connaît le moment où le corps veut ralentir et où le mental prend le relais."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pillar 2 -->
+                    <div class="reveal-up" style="position: relative;">
+                        <div
+                            style="font-size: 8rem; font-weight: 900; color: rgba(5,16,36,0.04); position: absolute; top: -60px; left: -20px; line-height: 1;">
+                            02</div>
+                        <h3
+                            style="font-size: 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; position: relative; z-index: 1; color: #051024;">
+                            Parallèle Padel
+                        </h3>
+                        <p
+                            style="color: rgba(5,16,36,0.75); font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; position: relative; z-index: 1;">
+                            Le padel est un sport stratégique, explosif et mentalement exigeant. Un match peut basculer
+                            sur une baisse de concentration, une frustration mal gérée ou une fatigue mal anticipée.
+                        </p>
+                        <ul
+                            style="color: rgba(5,16,36,0.85); font-size: 1.1rem; line-height: 1.8; padding-left: 0; list-style: none; margin-top: 20px; position: relative; z-index: 1; font-weight: 500;">
+                            <li style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;"><span
+                                    style="color: var(--accent-neon); font-weight: 800;">+</span> Concentration en match
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; gap: 10px; align-items: center;"><span
+                                    style="color: var(--accent-neon); font-weight: 800;">+</span> Résilience après une
+                                erreur</li>
+                            <li style="display: flex; gap: 10px; align-items: center;"><span
+                                    style="color: var(--accent-neon); font-weight: 800;">+</span> Préparation mentale
+                                avant compétition</li>
+                        </ul>
+                    </div>
+
+                    <!-- Pillar 3 -->
+                    <div class="reveal-up" style="position: relative;">
+                        <div
+                            style="font-size: 8rem; font-weight: 900; color: rgba(5,16,36,0.04); position: absolute; top: -60px; left: -20px; line-height: 1;">
+                            03</div>
+                        <h3
+                            style="font-size: 2rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; position: relative; z-index: 1; color: #051024;">
+                            Nutrition Stratégique
+                        </h3>
+                        <p
+                            style="color: rgba(5,16,36,0.75); font-size: 1.15rem; line-height: 1.8; margin-bottom: 20px; position: relative; z-index: 1;">
+                            L'alimentation influence l'énergie disponible, la récupération musculaire, la clarté mentale
+                            et la régulation émotionnelle. Zineb intègre une approche nutritionnelle adéquate pour
+                            structurer les repas, gérer les pics d'énergie et la récupération.
+                        </p>
+                        <div style="border-left: 2px solid var(--accent-neon); padding-left: 20px; margin-top: 30px;">
+                            <p
+                                style="color: #051024; font-size: 1.1rem; font-style: italic; font-weight: 600; margin: 0; opacity: 0.9;">
+                                "L'objectif n'est pas la restriction, mais l'optimisation."
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Cinematic Video & Quote Overlap (White Frosted Glass) -->
+        <section
+            style="position: relative; width: 100vw; margin-left: calc(-50vw + 50%); min-height: 800px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 150px;">
+
+            <!-- Video Background (Kept somewhat dark so white text/glass pops) -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <video src="videos/video montage zineb.mp4" autoplay loop muted playsinline
+                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;"></video>
+                <!-- Soft Light Overlay over video for daytime feel -->
+                <div
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,1) 100%);">
+                </div>
+            </div>
+
+            <!-- Floating Quote Glass Card (Light Mode Frosted Glass) -->
+            <div class="reveal-up container" style="position: relative; z-index: 2; max-width: 900px; padding: 0 20px;">
+                <div <div
+                    style="background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.8); padding: 80px 60px; border-radius: 24px; box-shadow: 0 40px 80px rgba(5,16,36,0.1); text-align: center;">
+
+                    <div
+                        style="font-size: 5rem; color: var(--accent-neon); opacity: 0.8; line-height: 0; margin-bottom: 30px;">
+                        "</div>
+
+                    <p
+                        style="font-size: clamp(1.4rem, 3vw, 2rem); font-style: italic; font-weight: 500; color: #051024; line-height: 1.6; margin-bottom: 40px; letter-spacing: 0px;">
+                        La performance commence dans le mental, se structure par la discipline et se renforce par une
+                        nutrition adaptée.
+                    </p>
+
+                    <div>
+                        <p
+                            style="color: var(--accent-neon); font-weight: 900; letter-spacing: 3px; text-transform: uppercase; margin: 0; font-size: 1.1rem;">
+                            Zineb Bennani</p>
+                        <p
+                            style="color: rgba(5,16,36,0.5); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; margin-top: 10px; font-weight: 600;">
+                            Psychologue clinicienne, préparation mentale, nutrition et récupération</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Elite Contact CTA (Light Mode) -->
+        <section class="container" style="max-width: 800px; margin: 0 auto; padding: 0 20px; text-align: center;">
+            <div class="reveal-up">
+                <p
+                    style="color: var(--accent-neon); font-size: 0.8rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;">
+                    Démarrer l'Accompagnement
+                </p>
+                <h2
+                    style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 30px; color: #051024;">
+                    Structurer votre<br><span
+                        style="color: transparent; -webkit-text-stroke: 1px #051024;">Progression</span>
+                </h2>
+                <p style="color: rgba(5,16,36,0.65); font-size: 1.2rem; line-height: 1.7; margin-bottom: 50px;">
+                    Des tarifs préférentiels et des packs d'accompagnement spécialement conçus pour les abonnés ZYSS
+                    Padel. Contactez Zineb directement.
+                </p>
+
+                <a href="https://wa.me/212661965280" class="cta-btn main"
+                    style="padding: 22px 60px; font-size: 1.1rem; letter-spacing: 2px; display: inline-flex; align-items: center; justify-content: center; gap: 15px; border-radius: 50px; background: #051024; color: #fff; border: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    CONTACTER ZINEB
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="magnetic-ball"></div>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/logo.png" alt="ZYSS Padel" class="footer-logo">
+                <p>Elite Sport meets Luxury.</p>
+            </div>
+            <div class="footer-col nav-col">
+                <div class="footer-nav-grid">
+                    <a href="index.html" class="footer-link-large">Accueil</a>
+                    <a href="stage-padel.html" class="footer-link-large">Padel Camps</a>
+                    <a href="events.html" class="footer-link-large">Events</a>
+                    <a href="corporate.html" class="footer-link-large">Corporate</a>
+                    <a href="coach-partners.html" class="footer-link-large">Coaching</a>
+                    <a href="psychologie-performance.html" class="footer-link-large">Performance</a>
+                    <a href="actualite.html" class="footer-link-large">Actualité</a>
+                    <a href="reviews.html" class="footer-link-large">Avis</a>
+                    <a href="contact.html" class="footer-link-large">Contact</a>
+                </div>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Connect</h4>
+                <a href="https://www.instagram.com/zysspadelcircle/" target="_blank">Instagram</a><br>
+                <a href="https://www.tiktok.com/@zysspadelcircle" target="_blank">TikTok</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 ZYSS Padel. Tous droits réservés.</p>
+            <p>Paris ââ‚¬Â¢ Agadir</p>
+        </div>
+    </footer>
+
+    <div class="custom-cursor"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

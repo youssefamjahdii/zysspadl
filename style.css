@@ -2131,3 +2131,113 @@ footer {
 
     /* shifted 1/3 since there are 3 sets */
 }
+/* =========================================
+   Universal Responsive Overrides (Light & Dark Mode)
+   ========================================= */
+@media (max-width: 900px) {
+    /* 1. Disable Sticky Layouts on Mobile/Tablets */
+    div[style*="position: sticky"] {
+        position: relative !important;
+        top: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* 2. Force Pricing Grid Stacking */
+    .pricing-board {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 3. Reduce Section Paddings */
+    .section {
+        padding: 80px 15px !important;
+    }
+
+    /* 4. Downsize Massive Hero H1 text globally for safety */
+    h1.large-title {
+        font-size: clamp(3.5rem, 12vw, 5rem) !important;
+    }
+    
+    .glass-card {
+        padding: 30px 20px !important;
+    }
+
+    /* 5. Flex to Column for Asymmetrical Layouts */
+    div[style*="display: flex; flex-wrap: wrap"] {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+}
+
+@media (max-width: 450px) {
+    /* Even smaller sizing for iPhone SE/Mini */
+    h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+    }
+    h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    }
+    .cta-btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 16px 20px !important;
+    }
+}
+/* =========================================
+   Universal Responsive Overrides (Light & Dark Mode)
+   ========================================= */
+@media (max-width: 900px) {
+
+    /* 1. Disable Sticky Layouts on Mobile/Tablets */
+    div[style*="position: sticky"] {
+        position: relative !important;
+        top: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 40px !important;
+    }
+
+    /* 2. Force Pricing Grid Stacking */
+    .pricing-board {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 3. Reduce Section Paddings */
+    .section {
+        padding: 80px 15px !important;
+    }
+
+    /* 4. Downsize Massive Hero H1 text globally for safety */
+    h1 {
+        font-size: clamp(3.5rem, 12vw, 5rem) !important;
+    }
+
+    .glass-card {
+        padding: 30px 20px !important;
+    }
+
+    /* 5. Flex to Column for Asymmetrical Layouts */
+    div[style*="display: flex; flex-wrap: wrap"] {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+}
+
+@media (max-width: 450px) {
+
+    /* Even smaller sizing for iPhone SE/Mini */
+    h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem) !important;
+        line-height: 1 !important;
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+    }
+
+    .cta-btn {
+        width: 100% !important;
+        text-align: center !important;
+        padding: 16px 20px !important;
+    }
+}
+
